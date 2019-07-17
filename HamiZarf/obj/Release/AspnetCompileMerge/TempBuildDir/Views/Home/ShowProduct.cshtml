@@ -1,0 +1,557 @@
+﻿
+@{
+   
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<title>حامی ظرف</title>
+@for (int i = 0; i < 8; i++)
+{
+    <br />
+}
+<header class="header_area">
+    <div class="header_top_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 hidden-xs">
+                    <div class="header_top_left">
+                        <p> تلفن تماس: <span>09178134699</span></p>
+                    </div>
+                </div>
+                <div class="col-sm-6 hidden-xs">
+                    <div class="header_top_right">
+                        <nav>
+                            <ul>
+                                <li class="language">
+                                    <a id="header_sub" href="#">انگلیسی</a>
+                                    <ul id="header_submenu">
+                                        <li class="active"><a href="#">فرانسوی</a></li>
+                                        <li><a href="#">فارسی</a></li>
+                                    </ul>
+                                </li>
+                                @*<li class="currency">
+                                        <a id="header_sub_cur" href="#">یورو</a>
+                                        <ul id="header_submenu_cur">
+                                            <li><a href="#">دلار(USD)</a></li>
+                                            <li><a href="#">یورو(EUR)</a></li>
+                                            <li><a href="#">تومان(TOM)</a></li>
+                                        </ul>
+                                    </li>*@
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header_middle_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="header_logo">
+                        <a href="/home/index"><img src="~/Template/img/logo/logo-white-text.png" alt="Timeplus" title="Relaxshop"></a>
+                    </div>
+                </div>
+                <style>
+                    .c:hover {
+                        color: magenta;
+                        background-color: wheat;
+                        font-family: Tahoma;
+                    }
+                </style>
+                @Html.Partial("~/Views/Partials/SearchBoxInHeader.cshtml")
+                @Html.Partial("~/Views/Partials/AccountInHeader.cshtml")
+                @Html.Partial("~/Views/Partials/PurchaseCartInHeader.cshtml")
+            </div>
+        </div>
+    </div>
+    <!-- MainMenu Area start -->
+
+
+    @{
+        var db = new HamiZarf.Models.HamiZarfDB();
+    }
+    <div class="mainmenu_area">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-9 hidden-xs">
+
+
+                    <div class="mainmenu">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="/home/index">خانه</a>
+
+                                </li>
+                                <li><a href="/home/ShowNewProduct">جدید ترین ها</a></li>
+                                <li><a href="/home/ShowFullSaleProduct">پر فروش ترین ها</a></li>
+                                <li><a href="/home/ShowSpecialProduct">ویژه ها</a></li>
+                                <li><a href="/home/showallcontents">وبلاگ</a></li>
+                                <li><a href="/home/about">درباره ما</a></li>
+                                <li><a href="/home/contactus">تماس با ما</a></li>
+                                <li><a href="#"></a></li>
+                                <li>
+                                    <a href="shop-grid.html">صفحات</a>
+                                    <ul class="submenu_mainmenu">
+
+
+
+                                        <li><a href="/home/HelpForBuy">راهنمای خرید</a></li>
+                                        <li><a href="/home/SaleSupport">پشتیبانی فروش</a></li>
+                                        <li><a href="/home/SendOrders">ارسال سفارشات</a></li>
+                                        <li><a href="/home/BackWarranty">گارانتی بازگشت وجه</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <!-- MainMenu Area end -->
+    <!-- Mobile Menu Area start -->
+
+    <div class="mobile-menu-area" style="padding-left:10%">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="mobile-menu">
+
+                        <nav id="dropdown">
+                            <ul>
+                                <li>
+                                    <a href="/home/index">خانه</a>
+
+                                </li>
+                                <li><a href="/home/ShowNewProduct">جدید ترین ها</a></li>
+                                <li><a href="/home/ShowFullSaleProduct">پر فروش ترین ها</a></li>
+                                <li><a href="/home/ShowSpecialProduct">ویژه ها</a></li>
+                                <li><a href="/home/showallcontents">وبلاگ</a></li>
+                                <li><a href="/home/about">درباره ما</a></li>
+                                <li><a href="/home/contactus">تماس با ما</a></li>
+                                <li><a href="#"></a></li>
+                                <li>
+                                    <a href="shop-grid.html">صفحات</a>
+                                    <ul>
+
+
+
+                                        <li><a href="/home/HelpForBuy">راهنمای خرید</a></li>
+                                        <li><a href="/home/SaleSupport">پشتیبانی فروش</a></li>
+                                        <li><a href="/home/SendOrders">ارسال سفارشات</a></li>
+                                        <li><a href="/home/BackWarranty">گارانتی بازگشت وجه</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <!-- Mobile Menu Area end -->
+</header>
+<div class="shop-area">
+    <div class="container">
+        <div class="row">
+           
+                @foreach (var item in ViewBag.show as IEnumerable<HamiZarf.Models.Product>)
+                {
+                    <div class="col-md-9">
+
+                        <div class="row">
+
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <div class="single-pro-tab-content">
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active" id="home"><a href="#"><img  src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.pic)}")"  alt="" /></a></div>
+   
+                                    </div>
+                                    <!-- Nav tabs -->
+                                    <ul class="single-product-tab" role="tablist">
+                                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><img src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.pic)}")" alt="" /></a></li>
+            
+                                    </ul>
+                                </div>			
+                            </div>
+                            <div class="col-md-7 col-sm-7 col-xs-12 shop-list shop-details">
+                                <div class="product-content">
+                                    <h3><a href="#">@item.Name</a></h3>
+                                    <div class="price">
+                                        <span>@item.Price تومان</span>
+                                    
+                                    </div>
+                                    <div class="s-p-rating">
+                                        <span class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </span>
+                                        <span class="review-no">نقد و بررسی</span>
+                                        <span class="review-no add-review"><a href="#">افزودن نقد خود</a></span>
+                                    </div>
+                                   <p>@item.FirstTxt</p>
+                                    <div class="pro-size">
+                                        <label>اندازه <span>*</span></label>
+                                        <select>
+                                            <option value="1">پیش فرض</option>
+                                            <option value="1">کوچک</option>
+                                            <option value="1">متوسط</option>
+                                            <option value="1">بزرگ</option>
+                                            <option value="1">خیلی بزرگ</option>
+                                        </select>
+                                    </div>
+                                    <div class="pro-size">
+                                        <label>رنگ <span>*</span></label>
+                                        <select>
+                                            <option value="1">سیاه</option>
+                                            <option value="1">سفید</option>
+                                            <option value="1">قرمز</option>
+                                            <option value="1">زرد</option>
+                                            <option value="1">صورتی</option>
+                                        </select>
+                                    </div>
+                                    <div class="product-action">
+                                        <div class="cart-plus">
+                                            <form action="#">
+                                                <div class="cart-plus-minus"><input type="text" value="1"><div class="dec qtybutton">-</div><div class="inc qtybutton">+</div></div>
+                                            </form>
+                                        </div>
+                                        <div class="button-top">
+                                            <a href="#"><i class="fa fa-heart"></i></a>
+                                        </div>
+                                        <div class="button-cart">
+                                            <button value="@item.Id"id="btnAddThisProductToPurchaseCart"><i class="fa fa-shopping-cart"></i> افزودن به سبد خرید</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-share">
+                                        <label>اشتراک گذاری:</label>
+                                        <span>
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="product-tabs">
+                                    <div>
+                                        <!-- Nav tabs -->
+                                        <ul class="pro-details-tab" role="tablist">
+                                            <li role="presentation" class=""><a href="#page-info" aria-controls="page-info" role="tab" data-toggle="tab" aria-expanded="false">اطلاعات اضافی </a></li>
+                                            <li role="presentation" class="active"><a href="#page-comments" aria-controls="page-comments" role="tab" data-toggle="tab" aria-expanded="true">نقدها (2)</a></li>
+                                        </ul>
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                           
+                                            <div role="tabpanel" class="tab-pane" id="page-info">
+                                                <div class="product-tab-desc">
+                                                    <p>@Html.Raw(item.Txt)</p>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane active" id="page-comments">
+                                                <div class="product-tab-desc">
+                                                    <div class="product-page-comments">
+                                                        <h2>1 نظر برای @item.Name</h2>
+                                                        <ul>
+                                                            <li>
+                                                                <div class="product-comments">
+                                                                    <img src="~/Template/img/author.jpg" alt="">
+                                                                    <div class="product-comments-content">
+                                                                        <p>
+                                                                            <strong>ادمین</strong> -
+                                                                            <span>7 مارس 2015:</span>
+                                                                            <span class="pro-comments-rating">
+                                                                                <i class="fa fa-star"></i>
+                                                                                <i class="fa fa-star"></i>
+                                                                                <i class="fa fa-star"></i>
+                                                                                <i class="fa fa-star"></i>
+                                                                            </span>
+                                                                        </p>
+                                                                        <div class="desc">
+                                                                            لورم ایپسوم متنی است که ساختگی برای طراحی و چاپ آن مورد است. صنعت چاپ زمانی لازم بود شرایطی شما باید فکر ثبت نام و طراحی، لازمه خروج می باشد
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="review-form-wrapper">
+                                                            <h3>افزودن یک نظر</h3>
+                                                            <form action="#">
+                                                                <input type="text" placeholder="نام شما">
+                                                                <input type="email" placeholder="ایمیل شما">
+                                                                <div class="your-rating">
+                                                                    <h5>امتیاز شما</h5>
+                                                                    <span>
+                                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                                    </span>
+                                                                    <span>
+                                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                                    </span>
+                                                                    <span>
+                                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                                    </span>
+                                                                    <span>
+                                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                                    </span>
+                                                                </div>
+                                                                <textarea id="product-message" cols="30" rows="10" placeholder="امتیاز شما"></textarea>
+                                                                <input type="submit" value="ارسال">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="section-title">
+                                    <h2>محصولات مرتبط</h2>
+                                    <div class="title-icon">
+                                        <span><i class="fa fa-angle-right"></i> <i class="fa fa-angle-left"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="related-curosel owl-carousel owl-theme" style="opacity: 1; display: block;">
+                                <!-- single-product start -->
+                                <div class="owl-wrapper-outer">
+                                    <div class="owl-wrapper" style="width: 3872px; left: 0px; display: block; transition: all 0ms ease; transform: translate3d(0px, 0px, 0px);">
+                                        @{
+                                                        var d = new HamiZarf.Models.HamiZarfDB();
+                                                        var s = d.Products.Where(s1 => s1.Name.Contains(item.Name) || s1.Txt.Contains(item.Name)).ToList().Take(4).Except(d.Products.Where(a => a.Id == item.Id));
+
+                                                        if (s != null)
+                                                        {
+                                                            foreach (var item1 in s)
+                                                            {
+                                                    <div class="owl-item" style="width: 242px;">
+                                                        <div class="col-md-12">
+                                                            <div class="single-product">
+                                                                <div class="product-img">
+                                                                    <a href="/home/showproduct?id=@(item1.Id)">
+                                                                        <img src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item1.pic)}")" alt="@item1.Name"title="@item1.Name">
+                                                                
+                                                                    </a>
+                                                                   
+                                                                    <div class="product-action">
+                                                                        <div class="button-top">
+                                                                         
+                                                                            <a href="#"><i class="fa fa-heart"></i></a>
+                                                                        </div>
+                                                                        <div class="button-cart">
+                                                                            <button><i class="fa fa-shopping-cart"></i> افزودن به سبد</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="product-content">
+                                                                    <h3><a href="/home/showproduct?id=@(item1.Id)">@item1.Name</a></h3>
+                                                                    <div class="price">
+                                                                        <span>@item1.Price تومان</span>
+                                                                  
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                foreach (var item1 in d.Products.ToList().Take(4))
+                                                {
+                                                    <div class="owl-item" style="width: 242px;">
+                                                        <div class="col-md-12">
+                                                            <div class="single-product">
+                                                                <div class="product-img">
+                                                                    <a href="/home/showproduct?id=@(item1.Id)">
+                                                                        <img src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item1.pic)}")" alt="@item1.Name" title="@item1.Name">
+
+                                                                    </a>
+
+                                                                    <div class="product-action">
+                                                                        <div class="button-top">
+
+                                                                            <a href="#"><i class="fa fa-heart"></i></a>
+                                                                        </div>
+                                                                        <div class="button-cart">
+                                                                            <button><i class="fa fa-shopping-cart"></i> افزودن به سبد</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="product-content">
+                                                                    <h3><a href="/home/showproduct?id=@(item1.Id)">@item1.Name</a></h3>
+                                                                    <div class="price">
+                                                                        <span>@item1.Price تومان</span>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            }
+
+                                        }
+                                       
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+            <!-- left-sidebar start -->
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <!-- widget-categories start -->
+                <aside class="widget widget-categories">
+                    <h3 class="sidebar-title">دسته بندی ها</h3>
+                    <ul class="sidebar-menu">
+                        @{ 
+                            var sa = new HamiZarf.Models.HamiZarfDB();
+                            var ws = sa.ParentCategories.ToList();
+                        }
+                      @foreach (var itema in ws)
+                      {
+                        <li><a href="/home/SearchProductByParentCategory?id=@(itema.Id)">@itema.Name</a> <span class="count">@itema.Products.Where(x=>x.P_Cat_Id==itema.Id).Count()</span></li>
+                      }
+
+                    </ul>
+                </aside>
+                <!-- widget-categories end -->
+                <!-- widget start -->
+                <aside class="widget widget-categories">
+                    <h3 class="sidebar-title">محصولات اخیر</h3>
+                    <div class="recent-product">
+                        @{ 
+                            var o = new HamiZarf.Models.HamiZarfDB();
+                            var l = o.Products.ToList().OrderByDescending(g => g.CreateDate).Take(3).Except(o.Products.Where(g => g.Id == item.Id));
+                        }
+                        @foreach (var item2 in l)
+                        {
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <a href="/home/showproduct?id=@(item2.Id)">
+                                        <img src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item2.pic)}")" alt="@item2.Name" title="@item2.Name">
+
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3><a href="/home/showproduct?id=@(item2.Id)">@item.Name</a></h3>
+                                    <div class="price">
+                                        <span>@item.Price تومان</span>
+                                   
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    
+                        
+                    </div>
+                </aside>
+                <!-- widget end -->
+                <!-- widget-tags start -->
+                @*<aside class="widget product-tag">
+                    <h3 class="sidebar-title">محبوب ترین برچسب ها</h3>
+                    <ul>
+                        <li><a href="#">تاپ</a></li>
+                        <li><a href="#">فشن</a></li>
+                        <li><a href="#">مجموعه</a></li>
+                        <li><a href="#">زنانه</a></li>
+                        <li><a href="#">مردانه</a></li>
+                        <li><a href="#">گالری</a></li>
+                        <li><a href="#">جدید</a></li>
+                        <li><a href="#">مجموعه مردانه</a></li>
+                        <li><a href="#">تاپ</a></li>
+                        <li><a href="#">فشن</a></li>
+                        <li><a href="#">مجموعه</a></li>
+                        <li><a href="#">بهترین</a></li>
+                        <li><a href="shop.html">لباس</a></li>
+                    </ul>
+                </aside>*@
+                <!-- widget-tags end -->
+                @*<aside class="widget sale-off hidden-sm">
+                    <div class="sale-off-carosel owl-carousel owl-theme" style="opacity: 1; display: block;">
+                        <div class="owl-wrapper-outer">
+                            <div class="owl-wrapper" style="width: 2130px; left: 0px; display: block; transition: all 1000ms ease; transform: translate3d(0px, 0px, 0px);">
+                                <div class="owl-item" style="width: 213px;">
+                                    <div class="single-sale">
+                                        <a href="#">
+                                            <img src="~/Template/img/product/16.jpg" alt="">
+                                            <h2>حراج</h2>
+                                        </a>
+                                    </div>
+                                </div><div class="owl-item" style="width: 213px;">
+                                    <div class="single-sale">
+                                        <a href="#">
+                                            <img src="~/Template/img/product/5.jpg" alt="">
+                                            <h2>حراج</h2>
+                                        </a>
+                                    </div>
+                                </div><div class="owl-item" style="width: 213px;">
+                                    <div class="single-sale">
+                                        <a href="#">
+                                            <img src="~/Template/img/product/6.jpg" alt="">
+                                            <h2>حراج</h2>
+                                        </a>
+                                    </div>
+                                </div><div class="owl-item" style="width: 213px;">
+                                    <div class="single-sale">
+                                        <a href="#">
+                                            <img src="~/Template/img/product/7.jpg" alt="">
+                                            <h2>حراج</h2>
+                                        </a>
+                                    </div>
+                                </div><div class="owl-item" style="width: 213px;">
+                                    <div class="single-sale">
+                                        <a href="#">
+                                            <img src="~/Template/img/product/4.jpg" alt="">
+                                            <h2>حراج</h2>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </aside>*@
+            </div>
+            <!-- left-sidebar end -->
+                }
+        </div>
+    </div>
+</div>
+
+@Html.Partial("~/Views/Partials/GetProductIdAndAddToPurchaseCart.cshtml")

@@ -1,0 +1,391 @@
+﻿<title>حامی ظرف</title>
+
+@for (int i = 0; i < 6; i++)
+{
+    <br />
+}
+<header class="header_area">
+    <div class="header_top_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 hidden-xs">
+                    <div class="header_top_left">
+                        <p> تلفن تماس: <span>09178134699</span></p>
+                    </div>
+                </div>
+                <div class="col-sm-6 hidden-xs">
+                    <div class="header_top_right">
+                        <nav>
+                            <ul>
+                                <li class="language">
+                                    <a id="header_sub" href="#">انگلیسی</a>
+                                    <ul id="header_submenu">
+                                        <li class="active"><a href="#">فرانسوی</a></li>
+                                        <li><a href="#">فارسی</a></li>
+                                    </ul>
+                                </li>
+                                @*<li class="currency">
+                                        <a id="header_sub_cur" href="#">یورو</a>
+                                        <ul id="header_submenu_cur">
+                                            <li><a href="#">دلار(USD)</a></li>
+                                            <li><a href="#">یورو(EUR)</a></li>
+                                            <li><a href="#">تومان(TOM)</a></li>
+                                        </ul>
+                                    </li>*@
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header_middle_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="header_logo">
+                        <a href="/home/index"><img src="~/Template/img/logo/logo-white-text.png" alt="Timeplus" title="Relaxshop"></a>
+                    </div>
+                </div>
+                <style>
+                    .c:hover {
+                        color: magenta;
+                        background-color: wheat;
+                        font-family: Tahoma;
+                    }
+                </style>
+                @Html.Partial("~/Views/Partials/SearchBoxInHeader.cshtml")
+                @Html.Partial("~/Views/Partials/AccountInHeader.cshtml")
+                @Html.Partial("~/Views/Partials/PurchaseCartInHeader.cshtml")
+            </div>
+        </div>
+    </div>
+    <!-- MainMenu Area start -->
+
+
+    @{
+        var db = new HamiZarf.Models.HamiZarfDB();
+    }
+    <div class="mainmenu_area">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-9 hidden-xs">
+
+
+                    <div class="mainmenu">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="/home/index">خانه</a>
+
+                                </li>
+                                <li><a href="/home/ShowNewProduct">جدید ترین ها</a></li>
+                                <li><a href="/home/ShowFullSaleProduct">پر فروش ترین ها</a></li>
+                                <li><a href="/home/ShowSpecialProduct">ویژه ها</a></li>
+                                <li><a href="/home/showallcontents">وبلاگ</a></li>
+                                <li><a href="/home/about">درباره ما</a></li>
+                                <li><a href="/home/contactus">تماس با ما</a></li>
+                                <li><a href="#"></a></li>
+                                <li>
+                                    <a href="shop-grid.html">صفحات</a>
+                                    <ul class="submenu_mainmenu">
+
+
+
+                                        <li><a href="/home/HelpForBuy">راهنمای خرید</a></li>
+                                        <li><a href="/home/SaleSupport">پشتیبانی فروش</a></li>
+                                        <li><a href="/home/SendOrders">ارسال سفارشات</a></li>
+                                        <li><a href="/home/BackWarranty">گارانتی بازگشت وجه</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <!-- MainMenu Area end -->
+    <!-- Mobile Menu Area start -->
+
+    <div class="mobile-menu-area" style="padding-left:10%">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="mobile-menu">
+
+                        <nav id="dropdown">
+                            <ul>
+                                <li>
+                                    <a href="/home/index">خانه</a>
+
+                                </li>
+                                <li><a href="/home/ShowNewProduct">جدید ترین ها</a></li>
+                                <li><a href="/home/ShowFullSaleProduct">پر فروش ترین ها</a></li>
+                                <li><a href="/home/ShowSpecialProduct">ویژه ها</a></li>
+                                <li><a href="/home/showallcontents">وبلاگ</a></li>
+                                <li><a href="/home/about">درباره ما</a></li>
+                                <li><a href="/home/contactus">تماس با ما</a></li>
+                                <li><a href="#"></a></li>
+                                <li>
+                                    <a href="shop-grid.html">صفحات</a>
+                                    <ul>
+
+
+
+                                        <li><a href="/home/HelpForBuy">راهنمای خرید</a></li>
+                                        <li><a href="/home/SaleSupport">پشتیبانی فروش</a></li>
+                                        <li><a href="/home/SendOrders">ارسال سفارشات</a></li>
+                                        <li><a href="/home/BackWarranty">گارانتی بازگشت وجه</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <!-- Mobile Menu Area end -->
+</header>
+<div class="shop-area">
+    <div class="container">
+        <div class="row">
+            <!-- left-sidebar start -->
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <!-- widget-categories start -->
+                <aside class="widget widget-categories">
+                    <h3 class="sidebar-title">دسته بندی</h3>
+                    <ul class="sidebar-menu">
+                        @{
+                            var sa = new HamiZarf.Models.HamiZarfDB();
+                            var ws = sa.ParentCategories.ToList();
+                        }
+                        @foreach (var itema in ws)
+                        {
+                            <li><a href="/home/SearchProductByParentCategory?id=@(itema.Id)">@itema.Name</a> <span class="count">@itema.Products.Where(x => x.P_Cat_Id == itema.Id).Count()</span></li>
+                        }
+
+                    </ul>
+                </aside>
+                <!-- widget-categories end -->
+                <!-- shop-filter start -->
+                @*<aside class="widget shop-filter">
+                    <h3 class="sidebar-title">فیلتر قیمت</h3>
+                    <div class="info_widget">
+                        <div class="price_filter">
+                            <div id="slider-range" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 3.57143%; width: 91.0714%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 3.57143%;"></span><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 94.6429%;"></span></div>
+                            <div class="price_slider_amount">
+                                <input type="text" id="amount" name="price" placeholder="افزودن قیمت شما">
+                                <input type="submit" value="فیلتر">
+                            </div>
+                        </div>
+                    </div>
+                </aside>*@
+                <!-- shop-filter end -->
+                <!-- filter-by start -->
+                @*<aside class="widget filter-by">
+                    <h3 class="sidebar-title">قیمت محصول</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="#">L</a> <span class="count">(1)</span></li>
+                        <li><a href="#">M</a> <span class="count">(1)</span></li>
+                        <li><a href="#">S</a> <span class="count">(1)</span></li>
+                        <li><a href="#">XL</a> <span class="count">(1)</span></li>
+                        <li><a href="#">XXL</a> <span class="count">(1)</span></li>
+                    </ul>
+                </aside>*@
+                <!-- filter-by end -->
+                <!-- widget start -->
+                @*<aside class="widget filter-by">
+                    <h3 class="sidebar-title">رنگ</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="#">سیاه</a> <span class="count">(1)</span></li>
+                        <li><a href="#">سفید</a> <span class="count">(8)</span></li>
+                        <li><a href="#">نارنجی</a> <span class="count">(5)</span></li>
+                        <li><a href="#">آبی</a> <span class="count">(7)</span></li>
+                        <li><a href="#">زرد</a> <span class="count">(11)</span></li>
+                        <li><a href="#">قهوه ای</a> <span class="count">(16)</span></li>
+                        <li><a href="#">قرمز</a> <span class="count">(9)</span></li>
+                    </ul>
+
+                </aside>*@
+                <!-- widget end -->
+                <!-- widget start -->
+
+                <aside class="widget widget-categories">
+                    <h3 class="sidebar-title">محصولات اخیر</h3>
+                    <div class="recent-product">
+                        @foreach (var item in ViewBag.ShowProductSide as IEnumerable<HamiZarf.Models.Product>)
+                        {
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.pic)}")" alt="@item.Name" title="@item.Name">
+
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3><a href="/home/showproduct?id=@(item.Id)">@item.Name</a></h3>
+                                    <div class="price">
+                                        <span>@item.Price تومان</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </aside>
+                <!-- widget end -->
+                <!-- widget-tags start -->
+             
+                <!-- widget-tags end -->
+           
+            </div>
+            <!-- left-sidebar end -->
+            <div class="col-md-9 col-sm-12 col-xs-12">
+                <div class="shop-content">
+                    <!-- Nav tabs -->
+                    @*<ul class="shop-tab" role="tablist">
+                        <li><span class="sorting-name"> نمایش بعنوان:  </span></li>
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true"><i class="fa fa-th" aria-hidden="true"></i></a></li>
+                        <li role="presentation" class=""><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" aria-expanded="false"><i class="fa fa-th-list" aria-hidden="true"></i></a></li>
+                    </ul>
+                    <div class="short-by">
+                        <span class="sorting-show"> مرتب سازی:</span>
+                        <select>
+                            <option value="volvo">محبوبیت</option>
+                            <option value="saab">پیش فرض</option>
+                            <option value="mercedes">امتیاز</option>
+                            <option value="audi">تازه ترین</option>
+                            <option value="audi">کم به زیاد</option>
+                            <option value="audi">زیاد به کم</option>
+                        </select>
+                    </div>
+                    <div class="shop-show">
+                        <span class="sorting-show"> نمایش:</span>
+                        <select>
+                            <option value="volvo">9</option>
+                            <option value="saab">10</option>
+                            <option value="mercedes">11</option>
+                            <option value="audi">12</option>
+                            <option value="audi">15</option>
+                            <option value="audi">16</option>
+                        </select>
+                    </div>
+                    <div class="shop-breadcrumb">
+                        <ul>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                        </ul>
+                    </div>*@
+
+                    <div class="clear"></div>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                            <div class="row">
+                                <style>
+                                    .k {
+                                        width: 260px;
+                                        height: 260px;
+                                    }
+
+                                    .kk {
+                                        width: 250px;
+                                        height: 180px;
+                                    }
+                                </style>
+                                <!-- single-product start -->
+                                @foreach (var item in ViewBag.ShowAllProductsBySearchBox as IEnumerable<HamiZarf.Models.Product>)
+                                {
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="single-product">
+                                            <div class="product-img">
+                                                <a href="/home/showproduct?id=@(item.Id)">
+                                                    <img src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.pic)}")" alt="@item.Name" title="@item.Name" class="k">
+
+                                                </a>
+                                                <span class="tag-line">ویژه</span>
+                                                <div class="product-action">
+                                                    <div class="button-top">
+
+                                                        <a href="#"><i class="fa fa-heart"></i></a>
+                                                    </div>
+                                                    <div class="button-cart">
+                                                        <button><i class="fa fa-shopping-cart"></i> افزودن به سبد</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="/home/showproduct?id=@(item.Id)">@item.Name</a></h3>
+                                                <div class="price">
+                                                    <span>@item.Price تومان</span>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                <!-- single-product end -->
+
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+                            <div class="row shop-list">
+                                <!-- single-product start -->
+                                @foreach (var item in ViewBag.ShowAllProductsBySearchBox as IEnumerable<HamiZarf.Models.Product>)
+                                {
+                                    <div class="col-md-12">
+                                        <div class="single-product">
+                                            <div class="product-img">
+                                                <a href="/home/showproduct?id=@(item.Id)">
+                                                    <img src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.pic)}")" alt="@item.Name" title="@item.Name" class="kk">
+                                                </a>
+                                                <span class="tag-line">ویژه</span>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="/home/showproduct?id=@(item.Id)">@item.Name</a></h3>
+                                                <div class="price">
+                                                    <span>@item.Price تومان</span>
+
+                                                </div>
+                                                <p>
+                                                    @item.Name
+                                                </p>
+                                                <div class="product-action">
+                                                    <div class="button-top">
+
+                                                        <a href="#"><i class="fa fa-heart"></i></a>
+                                                    </div>
+                                                    <div class="button-cart">
+                                                        <button><i class="fa fa-shopping-cart"></i> افزودن به سبد</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                                <!-- single-product end -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

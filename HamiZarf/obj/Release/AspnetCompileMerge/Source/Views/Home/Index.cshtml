@@ -1,0 +1,343 @@
+﻿  <!-- header end -->
+<title>خانه - حامی ظرف</title>
+<!-- home slider start -->
+
+
+
+
+<header class="header_area">
+    <div class="header_top_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 hidden-xs">
+                    <div class="header_top_left">
+                        <p> تلفن تماس: <span>09178134699</span></p>
+                    </div>
+                </div>
+                <div class="col-sm-6 hidden-xs">
+                    <div class="header_top_right">
+                        <nav>
+                            <ul>
+                                <li class="language">
+                                    <a id="header_sub" href="#">انگلیسی</a>
+                                    <ul id="header_submenu">
+                                        <li class="active"><a href="#">فرانسوی</a></li>
+                                        <li><a href="#">فارسی</a></li>
+                                    </ul>
+                                </li>
+                                <li class="currency">
+                                        <a id="header_sub_cur" href="#">یورو</a>
+                                        <ul id="header_submenu_cur">
+                                            <li><a href="#">دلار(USD)</a></li>
+                                            <li><a href="#">یورو(EUR)</a></li>
+                                            <li><a href="#">تومان(TOM)</a></li>
+                                        </ul>
+                                    </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header_middle_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="header_logo">
+                        <a href="/home/index"><img src="~/Template/img/logo/logo-white-text.png" alt="Timeplus" title="Relaxshop"></a>
+                    </div>
+                </div>
+                <style>
+                    .c:hover {
+                        color: magenta;
+                        background-color: wheat;
+                        font-family: Tahoma;
+                    }
+                </style>
+                @Html.Partial("~/Views/Partials/SearchBoxInHeader.cshtml")
+                @Html.Partial("~/Views/Partials/AccountInHeader.cshtml")
+                @Html.Partial("~/Views/Partials/PurchaseCartInHeader.cshtml")
+            </div>
+        </div>
+    </div>
+    <!-- MainMenu Area start -->
+
+
+    @Html.Partial("~/Views/Partials/Category.cshtml")
+    <br />
+    <!-- MainMenu Area end -->
+    <!-- Mobile Menu Area start -->
+
+    <div class="mobile-menu-area" style="padding-left:10%">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="mobile-menu">
+
+                        <nav id="dropdown">
+                            <ul>
+                                <li>
+                                    <a href="/home/index">خانه</a>
+
+                                </li>
+                                <li><a href="/home/ShowNewProduct">جدید ترین ها</a></li>
+                                <li><a href="/home/ShowFullSaleProduct">پر فروش ترین ها</a></li>
+                                <li><a href="/home/ShowSpecialProduct">ویژه ها</a></li>
+                                <li><a href="/home/showallcontents">وبلاگ</a></li>
+                                <li><a href="/home/about">درباره ما</a></li>
+                                <li><a href="/home/contactus">تماس با ما</a></li>
+                                <li><a href="#"></a></li>
+                                <li>
+                                    <a href="shop-grid.html">صفحات</a>
+                                    <ul>
+
+
+
+                                        <li><a href="/home/HelpForBuy">راهنمای خرید</a></li>
+                                        <li><a href="/home/SaleSupport">پشتیبانی فروش</a></li>
+                                        <li><a href="/home/SendOrders">ارسال سفارشات</a></li>
+                                        <li><a href="/home/BackWarranty">گارانتی بازگشت وجه</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <!-- Mobile Menu Area end -->
+</header>
+
+
+@for (int i = 0; i < 9; i++)
+{
+    <br />
+}
+@Html.Partial("~/Views/Partials/HamiSlider.cshtml")
+<link href="~/Content/MainStyles.css" rel="stylesheet" />
+<style>
+    .imgproduct2{
+        height:100px;
+        width:120px;
+    }
+</style>
+<br />
+<br />
+
+<div class="category-area category-area-3 pad-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="single-cat">
+                    <h2 class="cat-title">محصولات ویژه</h2>
+                    @foreach (var item in ViewBag.ShowAllSpecialProducts1 as IEnumerable<HamiZarf.Models.sp_sp_showProdcuts_Result>)
+                    {
+                        <div class="single-product">
+                            <div class="product-img">
+                                <a href="/home/showproduct?id=@(item.Id)">
+                                    <img src="@($"data:image/jpg;base64,{Convert.ToBase64String(item.pic)}")"alt="@item.Name" class="imgproduct2">
+                                    <img class="secondary-img imgproduct2" src="@($"data:image/jpg;base64,{Convert.ToBase64String(item.pic)}")" alt="@item.Name">
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href="/home/showproduct?id=@(item.Id)">@item.Name</a></h3>
+                                <div class="price">
+                                    <span>@item.Price تومان</span>
+                                     @if (item.OldPrice != null)
+                                     {
+                                        <span class="old">@item.OldPrice تومان</span>
+                                     }
+                                   
+                                </div>
+                                <div class="product-action">
+                                    <div class="button-top">
+                                        <a href="#"><i class="fa fa-heart"></i></a>
+                                    </div>
+                                    <div class="button-cart">
+                                        <button><i class="fa fa-shopping-cart" id="btnAddThisProductToPurchaseCart" productid="@item.Id"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+           
+                 
+                    <div class="cat-more">
+                        <a href="shop.html">مشاهده بیشتر <i class="fa fa-angle-left"></i><i class="fa fa-angle-left"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="single-cat">
+                    <h2 class="cat-title">محبوبیت</h2>
+                    @foreach (var item in ViewBag.ShowAllFullSaleProducts1 as IEnumerable<HamiZarf.Models.sp_sp_showProdcuts_Result>)
+                    {
+                        <div class="single-product">
+                            <div class="product-img">
+                                <a href="/home/showproduct?id=@(item.Id)">
+                                    <img src="@($"data:image/jpg;base64,{Convert.ToBase64String(item.pic)}")" alt="@item.Name"class="imgproduct2">
+                                    <img class="secondary-img imgproduct2" src="@($"data:image/jpg;base64,{Convert.ToBase64String(item.pic)}")" alt="">
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href="/home/showproduct?id=@(item.Id)">@item.Name</a></h3>
+                                <div class="price">
+                                    <span>@item.Price تومان</span>
+                                    @if (item.OldPrice != null)
+                                    {
+                                        <span class="old">@item.OldPrice تومان</span>
+                                    }
+
+                                </div>
+                                <div class="product-action">
+                                    <div class="button-top">
+                                        <a href="#"><i class="fa fa-heart"></i></a>
+                                    </div>
+                                    <div class="button-cart">
+                                        <button ><i class="fa fa-shopping-cart"id="btnAddThisProductToPurchaseCart" productid="@item.Id"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="cat-more">
+                        <a href="shop.html">مشاهده بیشتر <i class="fa fa-angle-left"></i><i class="fa fa-angle-left"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 hidden-sm">
+                <div class="single-cat">
+                    <h2 class="cat-title">محصول جدید</h2>
+                    @foreach (var item in ViewBag.ShowAllNewProducts1 as IEnumerable<HamiZarf.Models.sp_sp_showProdcuts_Result>)
+                    {
+                        <div class="single-product">
+                            <div class="product-img">
+                                <a href="/home/showproduct?id=@(item.Id)">
+                                    <img src="@($"data:image/jpg;base64,{Convert.ToBase64String(item.pic)}")" alt="@item.Name" class="imgproduct2">
+                                    <img class="secondary-img imgproduct2" src="@($"data:image/jpg;base64,{Convert.ToBase64String(item.pic)}")" alt="">
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href="/home/showproduct?id=@(item.Id)">@item.Name</a></h3>
+                                <div class="price">
+                                    <span>@item.Price تومان</span>
+                                    @if (item.OldPrice != null)
+                                    {
+                                        <span class="old">@item.OldPrice تومان</span>
+                                    }
+
+                                </div>
+                                <div class="product-action">
+                                    <div class="button-top">
+                                        <a href="#"><i class="fa fa-heart"></i></a>
+                                    </div>
+                                    <div class="button-cart">
+                                        <button><i class="fa fa-shopping-cart" id="btnAddThisProductToPurchaseCart" productid="@item.Id"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="cat-more">
+                        <a href="shop.html">مشاهده بیشتر <i class="fa fa-angle-left"></i><i class="fa fa-angle-left"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- new product start -->
+@{
+    var db = new HamiZarf.Models.HamiZarfDB();
+
+}
+
+@Html.Partial("~/Views/Partials/LookAtAllProductIndex.cshtml")
+<!-- new product end -->
+<!-- latest start -->
+<br />
+<div class="latest-blog-area pad-60">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <h2>آخرین ارسالی از وبلاگ</h2>
+                <div class="title-icon">
+                    <span><i class="fa fa-angle-right"></i> <i class="fa fa-angle-left"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blog-curosel owl-carousel owl-theme" style="opacity: 1; display: block;">
+                <div class="owl-wrapper-outer">
+                    <div class="owl-wrapper" style="width: 3000px; left: 0px; display: block; transition: all 0ms ease; transform: translate3d(0px, 0px, 0px);">
+
+                        @foreach (var item in ViewBag.showcontent as IEnumerable<HamiZarf.Models.sp_sp_showcontent_Result>)
+            {
+                            <div class="owl-item" style="width: 250px;">
+                                <div class="col-md-12">
+                                    <div class="blog-wrapper">
+                                        <div class="blog-img">
+                                            <a href="/home/showcontent?id=@(item.Id)">
+                                                <img src="@($"data:image/jpg;base64,{Convert.ToBase64String(item.Pic)}")" alt="@item.Subject"style="width:300px;height:150px"/>
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="blog-content">
+                                            <h3><a href="/home/showcontent?id=@(item.Id)">@item.Subject</a></h3>
+                                            <div class="blog-meta">
+                                          
+                                      
+                                            </div>
+                                            <p>@item.Txt .....</p>
+                                            <a class="read-more" href="/home/showcontent?id=@(item.Id)">بیشتر بخوانید <i class="fa fa-angle-left"></i> <i class="fa fa-angle-left"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<!-- latest end -->
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.cookie.js"></script>
+<script>
+    $(function () {
+        $("btnAddThisProductToPurchaseCart").click(function () {
+            this.textContent = "به سبد خرید اضافه شد";
+            alert(id)
+            var id = $(this).attr('productid');
+            if ($.cookie("cart")==undefined) {
+                var date = new Date();
+                date.setTime(date.getTime() + (1 * 60 * 1000))
+                $.cookie("cart", id, { Expires: date })
+           
+            } else {
+                var ids = $.cookie("cart");
+                $.cookie("cart", ids + ',' + id);
+            }
+        })
+    })
+
+</script>

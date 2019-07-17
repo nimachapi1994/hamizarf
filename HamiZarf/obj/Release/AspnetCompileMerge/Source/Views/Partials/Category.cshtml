@@ -1,0 +1,100 @@
+﻿
+
+
+
+
+
+
+@{
+        var db = new HamiZarf.Models.HamiZarfDB();
+    }
+    <div class="mainmenu_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 hidden-xs hidden-sm">
+                    <div class="category_menu hidden-xs">
+                        <div class="category_title">
+                            <h3>دسته بندی</h3>
+                        </div>
+                        <div class="category_menu_content">
+
+                            @foreach (var item in db.ParentCategories.ToList())
+                            {
+                                <ul>
+                                    <li class="sub-category">
+        @if (item.ChildCategories.Where(x => x.P_Cat_Id == item.Id) != null)
+        {
+        <li>
+            <a href="/home/SearchProductByParentCategory?id=@item.Id">@item.Name</a>
+            <ul class="sub-menu clearfix">
+                <li class="sub-sec col-md-6">
+                    <ul>
+                        @foreach (var item1 in item.ChildCategories.ToList())
+                        {
+
+                        <li><a href="/home/SearchProductByChildCategory?id=@item1.Id"><i class="fa fa-angle-double-left"></i>@item1.Name</a></li>
+                        }
+
+                    </ul>
+                </li>
+
+            </ul>
+        </li>
+        }
+        else
+        {
+            if (item.ChildCategories.Where(x => x.P_Cat_Id != item.Id).Count() == 0)
+            {
+
+            <li><a href="/home/SearchProductByParentCategory?id=@item.Id"><img src="img/icon/sport.jpg" alt="">@item.Name</a></li>
+            }
+        }
+
+
+
+
+                                </ul>
+                            }
+
+
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="col-sm-9 hidden-xs">
+
+
+                    <div class="mainmenu">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="/home/index">خانه</a>
+
+                                </li>
+                                <li><a href="/home/ShowNewProduct">جدید ترین ها</a></li>
+                                <li><a href="/home/ShowFullSaleProduct">پر فروش ترین ها</a></li>
+                                <li><a href="/home/ShowSpecialProduct">ویژه ها</a></li>
+                                <li><a href="/home/showallcontents">وبلاگ</a></li>
+                                <li><a href="/home/about">درباره ما</a></li>
+                                <li><a href="/home/contactus">تماس با ما</a></li>
+                                <li><a href="#"></a></li>
+                                <li>
+                                    <a href="shop-grid.html">صفحات</a>
+                                    <ul class="submenu_mainmenu">
+
+
+
+                                        <li><a href="/home/HelpForBuy">راهنمای خرید</a></li>
+                                        <li><a href="/home/SaleSupport">پشتیبانی فروش</a></li>
+                                        <li><a href="/home/SendOrders">ارسال سفارشات</a></li>
+                                        <li><a href="/home/BackWarranty">گارانتی بازگشت وجه</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

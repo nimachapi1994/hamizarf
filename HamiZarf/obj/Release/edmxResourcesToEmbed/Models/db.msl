@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HamiZarfDBModelStoreContainer" CdmEntityContainer="HamiZarfDB">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="HamiZarfDBModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="HamiZarfDBModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="HamiZarfDBModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="HamiZarfDBModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="HamiZarfDBModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Family" ColumnName="Family" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChildCategories">
+      <EntityTypeMapping TypeName="HamiZarfDBModel.ChildCategory">
+        <MappingFragment StoreEntitySet="ChildCategory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="P_Cat_Id" ColumnName="P_Cat_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactUs">
+      <EntityTypeMapping TypeName="HamiZarfDBModel.ContactU">
+        <MappingFragment StoreEntitySet="ContactUs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contents">
+      <EntityTypeMapping TypeName="HamiZarfDBModel.Content">
+        <MappingFragment StoreEntitySet="Content">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="DateOfShow" ColumnName="DateOfShow" />
+          <ScalarProperty Name="MoreTxt" ColumnName="MoreTxt" />
+          <ScalarProperty Name="TypeOfContent" ColumnName="TypeOfContent" />
+          <ScalarProperty Name="Pic" ColumnName="Pic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ParentCategories">
+      <EntityTypeMapping TypeName="HamiZarfDBModel.ParentCategory">
+        <MappingFragment StoreEntitySet="ParentCategory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="HamiZarfDBModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="P_Cat_Id" ColumnName="P_Cat_Id" />
+          <ScalarProperty Name="C_Cat_Id" ColumnName="C_Cat_Id" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SocialNetworksLinks">
+      <EntityTypeMapping TypeName="HamiZarfDBModel.SocialNetworksLink">
+        <MappingFragment StoreEntitySet="SocialNetworksLink">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Telegram" ColumnName="Telegram" />
+          <ScalarProperty Name="Instagram" ColumnName="Instagram" />
+          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+          <ScalarProperty Name="Gmail" ColumnName="Gmail" />
+          <ScalarProperty Name="Twitter" ColumnName="Twitter" />
+          <ScalarProperty Name="LinkedIn" ColumnName="LinkedIn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="HamiZarfDBModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="Sp_DeleteChildCategory" FunctionName="HamiZarfDBModel.Store.Sp_DeleteChildCategory" />
+    <FunctionImportMapping FunctionImportName="Sp_DeleteContactUs" FunctionName="HamiZarfDBModel.Store.Sp_DeleteContactUs" />
+    <FunctionImportMapping FunctionImportName="Sp_DeleteContent" FunctionName="HamiZarfDBModel.Store.Sp_DeleteContent" />
+    <FunctionImportMapping FunctionImportName="Sp_DeleteParentCategory" FunctionName="HamiZarfDBModel.Store.Sp_DeleteParentCategory" />
+    <FunctionImportMapping FunctionImportName="Sp_DeleteProduct" FunctionName="HamiZarfDBModel.Store.Sp_DeleteProduct" />
+    <FunctionImportMapping FunctionImportName="Sp_DeleteSocialNetworkLinks" FunctionName="HamiZarfDBModel.Store.Sp_DeleteSocialNetworkLinks" />
+    <FunctionImportMapping FunctionImportName="Sp_InsertChildCategory" FunctionName="HamiZarfDBModel.Store.Sp_InsertChildCategory" />
+    <FunctionImportMapping FunctionImportName="Sp_InsertContactUs" FunctionName="HamiZarfDBModel.Store.Sp_InsertContactUs" />
+    <FunctionImportMapping FunctionImportName="Sp_InsertParentCategory" FunctionName="HamiZarfDBModel.Store.Sp_InsertParentCategory" />
+    <FunctionImportMapping FunctionImportName="Sp_InsertProduct" FunctionName="HamiZarfDBModel.Store.Sp_InsertProduct" />
+    <FunctionImportMapping FunctionImportName="Sp_SelectAllProdductOK" FunctionName="HamiZarfDBModel.Store.Sp_SelectAllProdductOK">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HamiZarfDBModel.Sp_SelectAllProdductOK_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="P_Cat_Id" ColumnName="P_Cat_Id" />
+          <ScalarProperty Name="C_Cat_Id" ColumnName="C_Cat_Id" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_SelectProductById" FunctionName="HamiZarfDBModel.Store.Sp_SelectProductById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HamiZarfDBModel.Sp_SelectProductById_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="P_Cat_Id" ColumnName="P_Cat_Id" />
+          <ScalarProperty Name="C_Cat_Id" ColumnName="C_Cat_Id" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_UpdateParentCategory" FunctionName="HamiZarfDBModel.Store.Sp_UpdateParentCategory" />
+    <FunctionImportMapping FunctionImportName="Sp_UpdateProduct" FunctionName="HamiZarfDBModel.Store.Sp_UpdateProduct" />
+  </EntityContainerMapping>
+</Mapping>

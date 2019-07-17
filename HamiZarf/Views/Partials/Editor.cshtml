@@ -1,0 +1,68 @@
+﻿
+<div class="page-wrapper box-content">
+
+    <textarea class="content" name="example"></textarea>
+
+</div>
+<script>
+        $(document).ready(function() {
+            $('.content').richText();
+        });
+</script>
+<link href="~/Plugins/Editor/Css/richtext.min.css" rel="stylesheet" />
+<script>
+
+        $('.content').richText({
+
+            // text formatting
+            bold: true,
+            italic: true,
+            underline: true,
+
+            // text alignment
+            leftAlign: true,
+            centerAlign: true,
+            rightAlign: true,
+
+            // lists
+            ol: true,
+            ul: true,
+
+            // title
+            heading: true,
+
+            // colors
+            fontColor: true,
+
+            // uploads
+            imageUpload: true,
+            fileUpload: true,
+
+            // link
+            urls: true,
+
+            // tables
+            table: true,
+
+            // code
+            removeStyles: true,
+            code: true,
+
+            // colors
+            colors: [],
+
+            // dropdowns
+            fileHTML: '',
+            imageHTML: ''
+
+        });
+
+</script>
+
+
+
+
+
+
+
+   

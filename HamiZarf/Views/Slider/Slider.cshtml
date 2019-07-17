@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = "~/Views/Shared/lay.cshtml";
+}
+
+
+<body> 
+    @for (int i = 0; i < 5; i++)
+    {
+        <br />
+    }
+
+
+    <meta name="viewport" content="width=device-width" />
+    <div >
+     <a href="/slider/slidermanagment" class="btn btn-primary">مدیریت اسلایدر</a>
+        <br /> 
+        <form action="/slider/InsertSliderConfirm"enctype="multipart/form-data" method="post">
+            <div class="container" style="margin:auto;width:40%">
+                <div class="form-group">
+                    <label>متن روی عکس</label>
+                    <input class="form-control" name="caption" placeholder="حداکثر 5 کلمه"dir="rtl" /> 
+                </div>
+                <div class="form-group">
+                    <label>آپلود عکس</label>
+                    <input class="form-control" type="file" name="img" /> 
+                </div>
+                <button class="btn btn-success" id="btn1">ذخیره اطلاعات</button>
+            </div>
+          
+        </form>
+        @for (int i = 0; i < 5; i++)
+        {
+            <br />
+        }
+    </div>
+
+</body>

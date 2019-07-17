@@ -1,0 +1,1652 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="cheshmeb_shopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AllPages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="StrOfAllPage" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Family" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ChildCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="P_Cat_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="ContactUs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" />
+          <Property Name="Txt" Type="nvarchar" MaxLength="3000" />
+          <Property Name="subject" Type="nvarchar" MaxLength="200" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="15" />
+          <Property Name="Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Content">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Subject" Type="nvarchar" MaxLength="100" />
+          <Property Name="Txt" Type="nvarchar" MaxLength="90" />
+          <Property Name="DateOfShow" Type="datetime" />
+          <Property Name="MoreTxt" Type="nvarchar(max)" />
+          <Property Name="TypeOfContent" Type="nvarchar" MaxLength="20" />
+          <Property Name="Pic" Type="image" />
+        </EntityType>
+        <EntityType Name="Motto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Motto" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ParentCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PictureForParentCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="img" Type="image" />
+          <Property Name="P_Cat_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Txt" Type="nvarchar" MaxLength="3000" />
+          <Property Name="Price" Type="int" />
+          <Property Name="P_Cat_Id" Type="int" />
+          <Property Name="C_Cat_Id" Type="int" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsAvailable" Type="bit" />
+          <Property Name="pic" Type="image" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="NewProduct" Type="bit" />
+          <Property Name="SpecialProduct" Type="bit" />
+          <Property Name="FullSaleProduct" Type="bit" />
+          <Property Name="FirstTxt" Type="nvarchar" MaxLength="500" />
+          <Property Name="OldPrice" Type="int" />
+          <Property Name="C_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="Slider">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="img" Type="image" />
+          <Property Name="caption" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SocialNetworksLink">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Telegram" Type="nvarchar" MaxLength="200" />
+          <Property Name="Instagram" Type="nvarchar" MaxLength="200" />
+          <Property Name="Facebook" Type="nvarchar" MaxLength="200" />
+          <Property Name="Gmail" Type="nvarchar" MaxLength="200" />
+          <Property Name="Twitter" Type="nvarchar" MaxLength="200" />
+          <Property Name="LinkedIn" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <Association Name="FK_ChildCategory1_ParentCategory">
+          <End Role="ParentCategory" Type="Self.ParentCategory" Multiplicity="0..1" />
+          <End Role="ChildCategory" Type="Self.ChildCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ParentCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChildCategory">
+              <PropertyRef Name="P_Cat_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PictureForParentCategory_ParentCategory">
+          <End Role="ParentCategory" Type="Self.ParentCategory" Multiplicity="0..1" />
+          <End Role="PictureForParentCategory" Type="Self.PictureForParentCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ParentCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PictureForParentCategory">
+              <PropertyRef Name="P_Cat_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_ChildCategory">
+          <End Role="ChildCategory" Type="Self.ChildCategory" Multiplicity="0..1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChildCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="C_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_ChildCategory1">
+          <End Role="ChildCategory" Type="Self.ChildCategory" Multiplicity="0..1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChildCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="C_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_ParentCategory">
+          <End Role="ParentCategory" Type="Self.ParentCategory" Multiplicity="0..1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ParentCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="P_Cat_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="Sp_DeleteChildCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Sp_DeleteContactUs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Sp_DeleteContent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Sp_DeleteParentCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Sp_DeleteProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Sp_DeleteSocialNetworkLinks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Sp_Get4Content" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="i" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getallchildcategoryOk" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_getallparentcategoryOk" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Sp_InsertChildCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="p_category_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Sp_InsertContactUs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+          <Parameter Name="txt" Type="nvarchar" Mode="In" />
+          <Parameter Name="subject" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_InsertParentCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_InsertProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="price" Type="money" Mode="In" />
+          <Parameter Name="txt" Type="nvarchar" Mode="In" />
+          <Parameter Name="p_Cat_Id" Type="int" Mode="In" />
+          <Parameter Name="C_Cat_Id" Type="int" Mode="In" />
+          <Parameter Name="unit" Type="nvarchar" Mode="In" />
+          <Parameter Name="isavailable" Type="bit" Mode="In" />
+          <Parameter Name="pic" Type="image" Mode="In" />
+        </Function>
+        <Function Name="Sp_SelectAllProdductOK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Sp_SelectProductById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_ShowAllContents" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_sp_getidchildcategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="i" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_sp_getproductbychildvategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="i" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_sp_showchildcategorybyparentid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="i" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_sp_showcontent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_sp_showparentcategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_sp_showProdcuts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_sp_showslider" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Sp_sp_sp_GetAllrproductBySelectOfset" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pagenumber" Type="int" Mode="In" />
+          <Parameter Name="pagesize" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Sp_sp_sp_GetAllrproductBySelectOfsetfullsale" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pagenumber" Type="int" Mode="In" />
+          <Parameter Name="pagesize" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Sp_sp_sp_GetAllrproductBySelectOfsetnew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pagenumber" Type="int" Mode="In" />
+          <Parameter Name="pagesize" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Sp_sp_sp_GetAllrproductBySelectOfsetSpecial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pagenumber" Type="int" Mode="In" />
+          <Parameter Name="pagesize" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_sp_sp_getchildcategorybyid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_sp_sp_getproductBychildcategoryb_id" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ii" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_sp_sp_GetProductBySelectCategoryNUMBER" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_sp_sp_spgetpicforthisparentcategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="i" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_spEditeMotto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="motto" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_spshowMotto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Sp_UpdateParentCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_UpdateProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="unit" Type="nvarchar" Mode="In" />
+          <Parameter Name="P_Cat_Id" Type="int" Mode="In" />
+          <Parameter Name="C_Cat_Id" Type="int" Mode="In" />
+          <Parameter Name="txt" Type="nvarchar" Mode="In" />
+          <Parameter Name="price" Type="money" Mode="In" />
+          <Parameter Name="isavailable" Type="bit" Mode="In" />
+        </Function>
+        <EntityContainer Name="cheshmeb_shopModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AllPages" EntityType="Self.AllPages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChildCategory" EntityType="Self.ChildCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContactUs" EntityType="Self.ContactUs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Content" EntityType="Self.Content" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Motto" EntityType="Self.Motto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ParentCategory" EntityType="Self.ParentCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PictureForParentCategory" EntityType="Self.PictureForParentCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SocialNetworksLink" EntityType="Self.SocialNetworksLink" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ChildCategory1_ParentCategory" Association="Self.FK_ChildCategory1_ParentCategory">
+            <End Role="ParentCategory" EntitySet="ParentCategory" />
+            <End Role="ChildCategory" EntitySet="ChildCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PictureForParentCategory_ParentCategory" Association="Self.FK_PictureForParentCategory_ParentCategory">
+            <End Role="ParentCategory" EntitySet="ParentCategory" />
+            <End Role="PictureForParentCategory" EntitySet="PictureForParentCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_ChildCategory" Association="Self.FK_Products_ChildCategory">
+            <End Role="ChildCategory" EntitySet="ChildCategory" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_ChildCategory1" Association="Self.FK_Products_ChildCategory1">
+            <End Role="ChildCategory" EntitySet="ChildCategory" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_ParentCategory" Association="Self.FK_Products_ParentCategory">
+            <End Role="ParentCategory" EntitySet="ParentCategory" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="cheshmeb_shopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AllPage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="StrOfAllPage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Family" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="ChildCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="P_Cat_Id" Type="Int32" />
+          <NavigationProperty Name="ParentCategory" Relationship="Self.FK_ChildCategory1_ParentCategory" FromRole="ChildCategory" ToRole="ParentCategory" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Products_ChildCategory" FromRole="ChildCategory" ToRole="Products" />
+          <NavigationProperty Name="Products1" Relationship="Self.FK_Products_ChildCategory1" FromRole="ChildCategory" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="ContactU">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Txt" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Name="subject" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Content">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Subject" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Txt" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfShow" Type="DateTime" Precision="3" />
+          <Property Name="MoreTxt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TypeOfContent" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Motto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Motto1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ParentCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ChildCategories" Relationship="Self.FK_ChildCategory1_ParentCategory" FromRole="ParentCategory" ToRole="ChildCategory" />
+          <NavigationProperty Name="PictureForParentCategories" Relationship="Self.FK_PictureForParentCategory_ParentCategory" FromRole="ParentCategory" ToRole="PictureForParentCategory" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Products_ParentCategory" FromRole="ParentCategory" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="PictureForParentCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="img" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="P_Cat_Id" Type="Int32" />
+          <NavigationProperty Name="ParentCategory" Relationship="Self.FK_PictureForParentCategory_ParentCategory" FromRole="PictureForParentCategory" ToRole="ParentCategory" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Txt" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="P_Cat_Id" Type="Int32" />
+          <Property Name="C_Cat_Id" Type="Int32" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsAvailable" Type="Boolean" />
+          <Property Name="pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="NewProduct" Type="Boolean" />
+          <Property Name="SpecialProduct" Type="Boolean" />
+          <Property Name="FullSaleProduct" Type="Boolean" />
+          <Property Name="FirstTxt" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="OldPrice" Type="Int32" />
+          <Property Name="C_Id" Type="Int32" />
+          <NavigationProperty Name="ChildCategory" Relationship="Self.FK_Products_ChildCategory" FromRole="Products" ToRole="ChildCategory" />
+          <NavigationProperty Name="ChildCategory1" Relationship="Self.FK_Products_ChildCategory1" FromRole="Products" ToRole="ChildCategory" />
+          <NavigationProperty Name="ParentCategory" Relationship="Self.FK_Products_ParentCategory" FromRole="Products" ToRole="ParentCategory" />
+        </EntityType>
+        <EntityType Name="Slider">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="img" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="caption" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SocialNetworksLink">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Telegram" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Instagram" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Facebook" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Gmail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Twitter" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LinkedIn" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChildCategory1_ParentCategory">
+          <End Role="ParentCategory" Type="Self.ParentCategory" Multiplicity="0..1" />
+          <End Role="ChildCategory" Type="Self.ChildCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ParentCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChildCategory">
+              <PropertyRef Name="P_Cat_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_ChildCategory">
+          <End Role="ChildCategory" Type="Self.ChildCategory" Multiplicity="0..1" />
+          <End Role="Products" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChildCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="C_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_ChildCategory1">
+          <End Role="ChildCategory" Type="Self.ChildCategory" Multiplicity="0..1" />
+          <End Role="Products" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChildCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="C_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PictureForParentCategory_ParentCategory">
+          <End Role="ParentCategory" Type="Self.ParentCategory" Multiplicity="0..1" />
+          <End Role="PictureForParentCategory" Type="Self.PictureForParentCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ParentCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PictureForParentCategory">
+              <PropertyRef Name="P_Cat_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_ParentCategory">
+          <End Role="ParentCategory" Type="Self.ParentCategory" Multiplicity="0..1" />
+          <End Role="Products" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ParentCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="P_Cat_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="HamiZarfDB" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="AllPages" EntityType="Self.AllPage" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+          <EntitySet Name="ChildCategories" EntityType="Self.ChildCategory" />
+          <EntitySet Name="ContactUs" EntityType="Self.ContactU" />
+          <EntitySet Name="Contents" EntityType="Self.Content" />
+          <EntitySet Name="Mottoes" EntityType="Self.Motto" />
+          <EntitySet Name="ParentCategories" EntityType="Self.ParentCategory" />
+          <EntitySet Name="PictureForParentCategories" EntityType="Self.PictureForParentCategory" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Sliders" EntityType="Self.Slider" />
+          <EntitySet Name="SocialNetworksLinks" EntityType="Self.SocialNetworksLink" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChildCategory1_ParentCategory" Association="Self.FK_ChildCategory1_ParentCategory">
+            <End Role="ParentCategory" EntitySet="ParentCategories" />
+            <End Role="ChildCategory" EntitySet="ChildCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_ChildCategory" Association="Self.FK_Products_ChildCategory">
+            <End Role="ChildCategory" EntitySet="ChildCategories" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_ChildCategory1" Association="Self.FK_Products_ChildCategory1">
+            <End Role="ChildCategory" EntitySet="ChildCategories" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PictureForParentCategory_ParentCategory" Association="Self.FK_PictureForParentCategory_ParentCategory">
+            <End Role="ParentCategory" EntitySet="ParentCategories" />
+            <End Role="PictureForParentCategory" EntitySet="PictureForParentCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_ParentCategory" Association="Self.FK_Products_ParentCategory">
+            <End Role="ParentCategory" EntitySet="ParentCategories" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <FunctionImport Name="Sp_DeleteChildCategory">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_DeleteContactUs">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_DeleteContent">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_DeleteParentCategory">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_DeleteProduct">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_DeleteSocialNetworkLinks">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Get4Content" ReturnType="Collection(cheshmeb_shopModel.Sp_Get4Content_Result)">
+          <Parameter Name="i" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getallchildcategoryOk" ReturnType="Collection(cheshmeb_shopModel.sp_getallchildcategoryOk_Result)" />
+          <FunctionImport Name="sp_getallparentcategoryOk" ReturnType="Collection(cheshmeb_shopModel.sp_getallparentcategoryOk_Result)" />
+          <FunctionImport Name="Sp_InsertChildCategory">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="p_category_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_InsertContactUs">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="txt" Mode="In" Type="String" />
+            <Parameter Name="subject" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_InsertParentCategory">
+          <Parameter Name="name" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_InsertProduct">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="price" Mode="In" Type="Decimal" />
+            <Parameter Name="txt" Mode="In" Type="String" />
+            <Parameter Name="p_Cat_Id" Mode="In" Type="Int32" />
+            <Parameter Name="C_Cat_Id" Mode="In" Type="Int32" />
+            <Parameter Name="unit" Mode="In" Type="String" />
+            <Parameter Name="isavailable" Mode="In" Type="Boolean" />
+            <Parameter Name="pic" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_SelectAllProdductOK" ReturnType="Collection(cheshmeb_shopModel.Sp_SelectAllProdductOK_Result)" />
+          <FunctionImport Name="Sp_SelectProductById" ReturnType="Collection(cheshmeb_shopModel.Sp_SelectProductById_Result)">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ShowAllContents" ReturnType="Collection(cheshmeb_shopModel.sp_ShowAllContents_Result)" />
+          <FunctionImport Name="sp_sp_getidchildcategory" ReturnType="Collection(Int32)">
+          <Parameter Name="i" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_sp_getproductbychildvategory" ReturnType="Collection(cheshmeb_shopModel.sp_sp_getproductbychildvategory_Result)">
+          <Parameter Name="i" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_sp_showchildcategorybyparentid" ReturnType="Collection(cheshmeb_shopModel.sp_sp_showchildcategorybyparentid_Result)">
+          <Parameter Name="i" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_sp_showcontent" ReturnType="Collection(cheshmeb_shopModel.sp_sp_showcontent_Result)" />
+          <FunctionImport Name="sp_sp_showparentcategory" ReturnType="Collection(cheshmeb_shopModel.sp_sp_showparentcategory_Result)" />
+          <FunctionImport Name="sp_sp_showProdcuts" ReturnType="Collection(cheshmeb_shopModel.sp_sp_showProdcuts_Result)" />
+          <FunctionImport Name="sp_sp_showslider" ReturnType="Collection(cheshmeb_shopModel.sp_sp_showslider_Result)" />
+          <FunctionImport Name="sp_sp_sp_getchildcategorybyid" ReturnType="Collection(cheshmeb_shopModel.sp_sp_sp_getchildcategorybyid_Result)" />
+          <FunctionImport Name="sp_sp_sp_getproductBychildcategoryb_id" ReturnType="Collection(cheshmeb_shopModel.sp_sp_sp_getproductBychildcategoryb_id_Result)">
+          <Parameter Name="ii" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_sp_sp_GetProductBySelectCategoryNUMBER" ReturnType="Collection(cheshmeb_shopModel.sp_sp_sp_GetProductBySelectCategoryNUMBER_Result)" />
+          <FunctionImport Name="sp_sp_sp_spgetpicforthisparentcategory">
+          <Parameter Name="i" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_spEditeMotto">
+          <Parameter Name="motto" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_spshowMotto" ReturnType="Collection(cheshmeb_shopModel.sp_spshowMotto_Result)" />
+          <FunctionImport Name="Sp_UpdateParentCategory">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="name" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_UpdateProduct">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="unit" Mode="In" Type="String" />
+            <Parameter Name="P_Cat_Id" Mode="In" Type="Int32" />
+            <Parameter Name="C_Cat_Id" Mode="In" Type="Int32" />
+            <Parameter Name="txt" Mode="In" Type="String" />
+            <Parameter Name="price" Mode="In" Type="Decimal" />
+            <Parameter Name="isavailable" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_sp_sp_GetAllrproductBySelectOfset" ReturnType="Collection(cheshmeb_shopModel.Sp_sp_sp_GetAllrproductBySelectOfset_Result)">
+            <Parameter Name="pagenumber" Mode="In" Type="Int32" />
+            <Parameter Name="pagesize" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_sp_sp_GetAllrproductBySelectOfsetfullsale" ReturnType="Collection(cheshmeb_shopModel.Sp_sp_sp_GetAllrproductBySelectOfsetfullsale_Result)">
+            <Parameter Name="pagenumber" Mode="In" Type="Int32" />
+            <Parameter Name="pagesize" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_sp_sp_GetAllrproductBySelectOfsetnew" ReturnType="Collection(cheshmeb_shopModel.Sp_sp_sp_GetAllrproductBySelectOfsetnew_Result)">
+            <Parameter Name="pagenumber" Mode="In" Type="Int32" />
+            <Parameter Name="pagesize" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_sp_sp_GetAllrproductBySelectOfsetSpecial" ReturnType="Collection(cheshmeb_shopModel.Sp_sp_sp_GetAllrproductBySelectOfsetSpecial_Result)">
+            <Parameter Name="pagenumber" Mode="In" Type="Int32" />
+            <Parameter Name="pagesize" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="Sp_Get4Content_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Subject" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Txt" Nullable="true" MaxLength="90" />
+          <Property Type="DateTime" Name="DateOfShow" Nullable="true" Precision="23" />
+          <Property Type="String" Name="MoreTxt" Nullable="true" />
+          <Property Type="String" Name="TypeOfContent" Nullable="true" MaxLength="20" />
+          <Property Type="Binary" Name="Pic" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="sp_getallchildcategoryOk_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="P_Cat_Id" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_getallparentcategoryOk_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Sp_SelectAllProdductOK_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Txt" Nullable="true" MaxLength="3000" />
+          <Property Type="Int32" Name="Price" Nullable="true" />
+          <Property Type="Int32" Name="P_Cat_Id" Nullable="true" />
+          <Property Type="Int32" Name="C_Cat_Id" Nullable="true" />
+          <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+          <Property Type="Binary" Name="pic" Nullable="true" MaxLength="Max" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" />
+          <Property Type="Boolean" Name="NewProduct" Nullable="true" />
+          <Property Type="Boolean" Name="SpecialProduct" Nullable="true" />
+          <Property Type="Boolean" Name="FullSaleProduct" Nullable="true" />
+          <Property Type="String" Name="FirstTxt" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="OldPrice" Nullable="true" />
+          <Property Type="Int32" Name="C_Id" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Sp_SelectProductById_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Txt" Nullable="true" MaxLength="3000" />
+          <Property Type="Int32" Name="Price" Nullable="true" />
+          <Property Type="Int32" Name="P_Cat_Id" Nullable="true" />
+          <Property Type="Int32" Name="C_Cat_Id" Nullable="true" />
+          <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+          <Property Type="Binary" Name="pic" Nullable="true" MaxLength="Max" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" />
+          <Property Type="Boolean" Name="NewProduct" Nullable="true" />
+          <Property Type="Boolean" Name="SpecialProduct" Nullable="true" />
+          <Property Type="Boolean" Name="FullSaleProduct" Nullable="true" />
+          <Property Type="String" Name="FirstTxt" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="OldPrice" Nullable="true" />
+          <Property Type="Int32" Name="C_Id" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_ShowAllContents_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Subject" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Txt" Nullable="true" MaxLength="90" />
+          <Property Type="DateTime" Name="DateOfShow" Nullable="true" Precision="23" />
+          <Property Type="String" Name="MoreTxt" Nullable="true" />
+          <Property Type="String" Name="TypeOfContent" Nullable="true" MaxLength="20" />
+          <Property Type="Binary" Name="Pic" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="sp_sp_getproductbychildvategory_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Txt" Nullable="true" MaxLength="3000" />
+          <Property Type="Int32" Name="Price" Nullable="true" />
+          <Property Type="Int32" Name="P_Cat_Id" Nullable="true" />
+          <Property Type="Int32" Name="C_Cat_Id" Nullable="true" />
+          <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+          <Property Type="Binary" Name="pic" Nullable="true" MaxLength="Max" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" />
+          <Property Type="Boolean" Name="NewProduct" Nullable="true" />
+          <Property Type="Boolean" Name="SpecialProduct" Nullable="true" />
+          <Property Type="Boolean" Name="FullSaleProduct" Nullable="true" />
+          <Property Type="String" Name="FirstTxt" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="OldPrice" Nullable="true" />
+          <Property Type="Int32" Name="C_Id" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_sp_showchildcategorybyparentid_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="P_Cat_Id" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_sp_showcontent_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Subject" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Txt" Nullable="true" MaxLength="90" />
+          <Property Type="DateTime" Name="DateOfShow" Nullable="true" Precision="23" />
+          <Property Type="String" Name="MoreTxt" Nullable="true" />
+          <Property Type="String" Name="TypeOfContent" Nullable="true" MaxLength="20" />
+          <Property Type="Binary" Name="Pic" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="sp_sp_showparentcategory_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_sp_showProdcuts_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Txt" Nullable="true" MaxLength="3000" />
+          <Property Type="Int32" Name="Price" Nullable="true" />
+          <Property Type="Int32" Name="P_Cat_Id" Nullable="true" />
+          <Property Type="Int32" Name="C_Cat_Id" Nullable="true" />
+          <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+          <Property Type="Binary" Name="pic" Nullable="true" MaxLength="Max" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" />
+          <Property Type="Boolean" Name="NewProduct" Nullable="true" />
+          <Property Type="Boolean" Name="SpecialProduct" Nullable="true" />
+          <Property Type="Boolean" Name="FullSaleProduct" Nullable="true" />
+          <Property Type="String" Name="FirstTxt" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="OldPrice" Nullable="true" />
+          <Property Type="Int32" Name="C_Id" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_sp_showslider_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Binary" Name="img" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="caption" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="sp_sp_sp_getchildcategorybyid_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="P_Cat_Id" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_sp_sp_getproductBychildcategoryb_id_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Txt" Nullable="true" MaxLength="3000" />
+          <Property Type="Int32" Name="Price" Nullable="true" />
+          <Property Type="Int32" Name="P_Cat_Id" Nullable="true" />
+          <Property Type="Int32" Name="C_Cat_Id" Nullable="true" />
+          <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+          <Property Type="Binary" Name="pic" Nullable="true" MaxLength="Max" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" />
+          <Property Type="Boolean" Name="NewProduct" Nullable="true" />
+          <Property Type="Boolean" Name="SpecialProduct" Nullable="true" />
+          <Property Type="Boolean" Name="FullSaleProduct" Nullable="true" />
+          <Property Type="String" Name="FirstTxt" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="OldPrice" Nullable="true" />
+          <Property Type="Int32" Name="C_Id" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_sp_sp_GetProductBySelectCategoryNUMBER_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Txt" Nullable="true" MaxLength="3000" />
+          <Property Type="Int32" Name="Price" Nullable="true" />
+          <Property Type="Int32" Name="P_Cat_Id" Nullable="true" />
+          <Property Type="Int32" Name="C_Cat_Id" Nullable="true" />
+          <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+          <Property Type="Binary" Name="pic" Nullable="true" MaxLength="Max" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" />
+          <Property Type="Boolean" Name="NewProduct" Nullable="true" />
+          <Property Type="Boolean" Name="SpecialProduct" Nullable="true" />
+          <Property Type="Boolean" Name="FullSaleProduct" Nullable="true" />
+          <Property Type="String" Name="FirstTxt" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="OldPrice" Nullable="true" />
+          <Property Type="Int32" Name="C_Id" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_spshowMotto_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Motto" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="Sp_sp_sp_GetAllrproductBySelectOfset_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Txt" Nullable="true" MaxLength="3000" />
+          <Property Type="Int32" Name="Price" Nullable="true" />
+          <Property Type="Int32" Name="P_Cat_Id" Nullable="true" />
+          <Property Type="Int32" Name="C_Cat_Id" Nullable="true" />
+          <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+          <Property Type="Binary" Name="pic" Nullable="true" MaxLength="Max" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" />
+          <Property Type="Boolean" Name="NewProduct" Nullable="true" />
+          <Property Type="Boolean" Name="SpecialProduct" Nullable="true" />
+          <Property Type="Boolean" Name="FullSaleProduct" Nullable="true" />
+          <Property Type="String" Name="FirstTxt" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="OldPrice" Nullable="true" />
+          <Property Type="Int32" Name="C_Id" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Sp_sp_sp_GetAllrproductBySelectOfsetfullsale_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Txt" Nullable="true" MaxLength="3000" />
+          <Property Type="Int32" Name="Price" Nullable="true" />
+          <Property Type="Int32" Name="P_Cat_Id" Nullable="true" />
+          <Property Type="Int32" Name="C_Cat_Id" Nullable="true" />
+          <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+          <Property Type="Binary" Name="pic" Nullable="true" MaxLength="Max" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" />
+          <Property Type="Boolean" Name="NewProduct" Nullable="true" />
+          <Property Type="Boolean" Name="SpecialProduct" Nullable="true" />
+          <Property Type="Boolean" Name="FullSaleProduct" Nullable="true" />
+          <Property Type="String" Name="FirstTxt" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="OldPrice" Nullable="true" />
+          <Property Type="Int32" Name="C_Id" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Sp_sp_sp_GetAllrproductBySelectOfsetnew_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Txt" Nullable="true" MaxLength="3000" />
+          <Property Type="Int32" Name="Price" Nullable="true" />
+          <Property Type="Int32" Name="P_Cat_Id" Nullable="true" />
+          <Property Type="Int32" Name="C_Cat_Id" Nullable="true" />
+          <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+          <Property Type="Binary" Name="pic" Nullable="true" MaxLength="Max" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" />
+          <Property Type="Boolean" Name="NewProduct" Nullable="true" />
+          <Property Type="Boolean" Name="SpecialProduct" Nullable="true" />
+          <Property Type="Boolean" Name="FullSaleProduct" Nullable="true" />
+          <Property Type="String" Name="FirstTxt" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="OldPrice" Nullable="true" />
+          <Property Type="Int32" Name="C_Id" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Sp_sp_sp_GetAllrproductBySelectOfsetSpecial_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Txt" Nullable="true" MaxLength="3000" />
+          <Property Type="Int32" Name="Price" Nullable="true" />
+          <Property Type="Int32" Name="P_Cat_Id" Nullable="true" />
+          <Property Type="Int32" Name="C_Cat_Id" Nullable="true" />
+          <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+          <Property Type="Binary" Name="pic" Nullable="true" MaxLength="Max" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" />
+          <Property Type="Boolean" Name="NewProduct" Nullable="true" />
+          <Property Type="Boolean" Name="SpecialProduct" Nullable="true" />
+          <Property Type="Boolean" Name="FullSaleProduct" Nullable="true" />
+          <Property Type="String" Name="FirstTxt" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="OldPrice" Nullable="true" />
+          <Property Type="Int32" Name="C_Id" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="cheshmeb_shopModelStoreContainer" CdmEntityContainer="HamiZarfDB">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="cheshmeb_shopModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AllPages">
+            <EntityTypeMapping TypeName="cheshmeb_shopModel.AllPage">
+              <MappingFragment StoreEntitySet="AllPages">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StrOfAllPage" ColumnName="StrOfAllPage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="cheshmeb_shopModel.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="cheshmeb_shopModel.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="cheshmeb_shopModel.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="cheshmeb_shopModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Family" ColumnName="Family" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChildCategories">
+            <EntityTypeMapping TypeName="cheshmeb_shopModel.ChildCategory">
+              <MappingFragment StoreEntitySet="ChildCategory">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="P_Cat_Id" ColumnName="P_Cat_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactUs">
+            <EntityTypeMapping TypeName="cheshmeb_shopModel.ContactU">
+              <MappingFragment StoreEntitySet="ContactUs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Txt" ColumnName="Txt" />
+                <ScalarProperty Name="subject" ColumnName="subject" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contents">
+            <EntityTypeMapping TypeName="cheshmeb_shopModel.Content">
+              <MappingFragment StoreEntitySet="Content">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Txt" ColumnName="Txt" />
+                <ScalarProperty Name="DateOfShow" ColumnName="DateOfShow" />
+                <ScalarProperty Name="MoreTxt" ColumnName="MoreTxt" />
+                <ScalarProperty Name="TypeOfContent" ColumnName="TypeOfContent" />
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mottoes">
+            <EntityTypeMapping TypeName="cheshmeb_shopModel.Motto">
+              <MappingFragment StoreEntitySet="Motto">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Motto1" ColumnName="Motto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ParentCategories">
+            <EntityTypeMapping TypeName="cheshmeb_shopModel.ParentCategory">
+              <MappingFragment StoreEntitySet="ParentCategory">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PictureForParentCategories">
+            <EntityTypeMapping TypeName="cheshmeb_shopModel.PictureForParentCategory">
+              <MappingFragment StoreEntitySet="PictureForParentCategory">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="P_Cat_Id" ColumnName="P_Cat_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="cheshmeb_shopModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Txt" ColumnName="Txt" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="P_Cat_Id" ColumnName="P_Cat_Id" />
+                <ScalarProperty Name="C_Cat_Id" ColumnName="C_Cat_Id" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="NewProduct" ColumnName="NewProduct" />
+                <ScalarProperty Name="SpecialProduct" ColumnName="SpecialProduct" />
+                <ScalarProperty Name="FullSaleProduct" ColumnName="FullSaleProduct" />
+                <ScalarProperty Name="FirstTxt" ColumnName="FirstTxt" />
+                <ScalarProperty Name="OldPrice" ColumnName="OldPrice" />
+                <ScalarProperty Name="C_Id" ColumnName="C_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sliders">
+            <EntityTypeMapping TypeName="cheshmeb_shopModel.Slider">
+              <MappingFragment StoreEntitySet="Slider">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="caption" ColumnName="caption" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SocialNetworksLinks">
+            <EntityTypeMapping TypeName="cheshmeb_shopModel.SocialNetworksLink">
+              <MappingFragment StoreEntitySet="SocialNetworksLink">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Telegram" ColumnName="Telegram" />
+                <ScalarProperty Name="Instagram" ColumnName="Instagram" />
+                <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+                <ScalarProperty Name="Gmail" ColumnName="Gmail" />
+                <ScalarProperty Name="Twitter" ColumnName="Twitter" />
+                <ScalarProperty Name="LinkedIn" ColumnName="LinkedIn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="cheshmeb_shopModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="Sp_DeleteChildCategory" FunctionName="cheshmeb_shopModel.Store.Sp_DeleteChildCategory" />
+          <FunctionImportMapping FunctionImportName="Sp_DeleteContactUs" FunctionName="cheshmeb_shopModel.Store.Sp_DeleteContactUs" />
+          <FunctionImportMapping FunctionImportName="Sp_DeleteContent" FunctionName="cheshmeb_shopModel.Store.Sp_DeleteContent" />
+          <FunctionImportMapping FunctionImportName="Sp_DeleteParentCategory" FunctionName="cheshmeb_shopModel.Store.Sp_DeleteParentCategory" />
+          <FunctionImportMapping FunctionImportName="Sp_DeleteProduct" FunctionName="cheshmeb_shopModel.Store.Sp_DeleteProduct" />
+          <FunctionImportMapping FunctionImportName="Sp_DeleteSocialNetworkLinks" FunctionName="cheshmeb_shopModel.Store.Sp_DeleteSocialNetworkLinks" />
+          <FunctionImportMapping FunctionImportName="Sp_Get4Content" FunctionName="cheshmeb_shopModel.Store.Sp_Get4Content">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cheshmeb_shopModel.Sp_Get4Content_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Txt" ColumnName="Txt" />
+                <ScalarProperty Name="DateOfShow" ColumnName="DateOfShow" />
+                <ScalarProperty Name="MoreTxt" ColumnName="MoreTxt" />
+                <ScalarProperty Name="TypeOfContent" ColumnName="TypeOfContent" />
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getallchildcategoryOk" FunctionName="cheshmeb_shopModel.Store.sp_getallchildcategoryOk">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cheshmeb_shopModel.sp_getallchildcategoryOk_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="P_Cat_Id" ColumnName="P_Cat_Id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getallparentcategoryOk" FunctionName="cheshmeb_shopModel.Store.sp_getallparentcategoryOk">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cheshmeb_shopModel.sp_getallparentcategoryOk_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_InsertChildCategory" FunctionName="cheshmeb_shopModel.Store.Sp_InsertChildCategory" />
+          <FunctionImportMapping FunctionImportName="Sp_InsertContactUs" FunctionName="cheshmeb_shopModel.Store.Sp_InsertContactUs" />
+          <FunctionImportMapping FunctionImportName="Sp_InsertParentCategory" FunctionName="cheshmeb_shopModel.Store.Sp_InsertParentCategory" />
+          <FunctionImportMapping FunctionImportName="Sp_InsertProduct" FunctionName="cheshmeb_shopModel.Store.Sp_InsertProduct" />
+          <FunctionImportMapping FunctionImportName="Sp_SelectAllProdductOK" FunctionName="cheshmeb_shopModel.Store.Sp_SelectAllProdductOK">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cheshmeb_shopModel.Sp_SelectAllProdductOK_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Txt" ColumnName="Txt" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="P_Cat_Id" ColumnName="P_Cat_Id" />
+                <ScalarProperty Name="C_Cat_Id" ColumnName="C_Cat_Id" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="NewProduct" ColumnName="NewProduct" />
+                <ScalarProperty Name="SpecialProduct" ColumnName="SpecialProduct" />
+                <ScalarProperty Name="FullSaleProduct" ColumnName="FullSaleProduct" />
+                <ScalarProperty Name="FirstTxt" ColumnName="FirstTxt" />
+                <ScalarProperty Name="OldPrice" ColumnName="OldPrice" />
+                <ScalarProperty Name="C_Id" ColumnName="C_Id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_SelectProductById" FunctionName="cheshmeb_shopModel.Store.Sp_SelectProductById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cheshmeb_shopModel.Sp_SelectProductById_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Txt" ColumnName="Txt" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="P_Cat_Id" ColumnName="P_Cat_Id" />
+                <ScalarProperty Name="C_Cat_Id" ColumnName="C_Cat_Id" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="NewProduct" ColumnName="NewProduct" />
+                <ScalarProperty Name="SpecialProduct" ColumnName="SpecialProduct" />
+                <ScalarProperty Name="FullSaleProduct" ColumnName="FullSaleProduct" />
+                <ScalarProperty Name="FirstTxt" ColumnName="FirstTxt" />
+                <ScalarProperty Name="OldPrice" ColumnName="OldPrice" />
+                <ScalarProperty Name="C_Id" ColumnName="C_Id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_ShowAllContents" FunctionName="cheshmeb_shopModel.Store.sp_ShowAllContents">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cheshmeb_shopModel.sp_ShowAllContents_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Txt" ColumnName="Txt" />
+                <ScalarProperty Name="DateOfShow" ColumnName="DateOfShow" />
+                <ScalarProperty Name="MoreTxt" ColumnName="MoreTxt" />
+                <ScalarProperty Name="TypeOfContent" ColumnName="TypeOfContent" />
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_sp_getidchildcategory" FunctionName="cheshmeb_shopModel.Store.sp_sp_getidchildcategory" />
+          <FunctionImportMapping FunctionImportName="sp_sp_getproductbychildvategory" FunctionName="cheshmeb_shopModel.Store.sp_sp_getproductbychildvategory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cheshmeb_shopModel.sp_sp_getproductbychildvategory_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Txt" ColumnName="Txt" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="P_Cat_Id" ColumnName="P_Cat_Id" />
+                <ScalarProperty Name="C_Cat_Id" ColumnName="C_Cat_Id" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="NewProduct" ColumnName="NewProduct" />
+                <ScalarProperty Name="SpecialProduct" ColumnName="SpecialProduct" />
+                <ScalarProperty Name="FullSaleProduct" ColumnName="FullSaleProduct" />
+                <ScalarProperty Name="FirstTxt" ColumnName="FirstTxt" />
+                <ScalarProperty Name="OldPrice" ColumnName="OldPrice" />
+                <ScalarProperty Name="C_Id" ColumnName="C_Id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_sp_showchildcategorybyparentid" FunctionName="cheshmeb_shopModel.Store.sp_sp_showchildcategorybyparentid">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cheshmeb_shopModel.sp_sp_showchildcategorybyparentid_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="P_Cat_Id" ColumnName="P_Cat_Id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_sp_showcontent" FunctionName="cheshmeb_shopModel.Store.sp_sp_showcontent">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cheshmeb_shopModel.sp_sp_showcontent_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Txt" ColumnName="Txt" />
+                <ScalarProperty Name="DateOfShow" ColumnName="DateOfShow" />
+                <ScalarProperty Name="MoreTxt" ColumnName="MoreTxt" />
+                <ScalarProperty Name="TypeOfContent" ColumnName="TypeOfContent" />
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_sp_showparentcategory" FunctionName="cheshmeb_shopModel.Store.sp_sp_showparentcategory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cheshmeb_shopModel.sp_sp_showparentcategory_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_sp_showProdcuts" FunctionName="cheshmeb_shopModel.Store.sp_sp_showProdcuts">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cheshmeb_shopModel.sp_sp_showProdcuts_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Txt" ColumnName="Txt" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="P_Cat_Id" ColumnName="P_Cat_Id" />
+                <ScalarProperty Name="C_Cat_Id" ColumnName="C_Cat_Id" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="NewProduct" ColumnName="NewProduct" />
+                <ScalarProperty Name="SpecialProduct" ColumnName="SpecialProduct" />
+                <ScalarProperty Name="FullSaleProduct" ColumnName="FullSaleProduct" />
+                <ScalarProperty Name="FirstTxt" ColumnName="FirstTxt" />
+                <ScalarProperty Name="OldPrice" ColumnName="OldPrice" />
+                <ScalarProperty Name="C_Id" ColumnName="C_Id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_sp_showslider" FunctionName="cheshmeb_shopModel.Store.sp_sp_showslider">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cheshmeb_shopModel.sp_sp_showslider_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="caption" ColumnName="caption" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_sp_sp_getchildcategorybyid" FunctionName="cheshmeb_shopModel.Store.sp_sp_sp_getchildcategorybyid">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cheshmeb_shopModel.sp_sp_sp_getchildcategorybyid_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="P_Cat_Id" ColumnName="P_Cat_Id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_sp_sp_getproductBychildcategoryb_id" FunctionName="cheshmeb_shopModel.Store.sp_sp_sp_getproductBychildcategoryb_id">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cheshmeb_shopModel.sp_sp_sp_getproductBychildcategoryb_id_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Txt" ColumnName="Txt" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="P_Cat_Id" ColumnName="P_Cat_Id" />
+                <ScalarProperty Name="C_Cat_Id" ColumnName="C_Cat_Id" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="NewProduct" ColumnName="NewProduct" />
+                <ScalarProperty Name="SpecialProduct" ColumnName="SpecialProduct" />
+                <ScalarProperty Name="FullSaleProduct" ColumnName="FullSaleProduct" />
+                <ScalarProperty Name="FirstTxt" ColumnName="FirstTxt" />
+                <ScalarProperty Name="OldPrice" ColumnName="OldPrice" />
+                <ScalarProperty Name="C_Id" ColumnName="C_Id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_sp_sp_GetProductBySelectCategoryNUMBER" FunctionName="cheshmeb_shopModel.Store.sp_sp_sp_GetProductBySelectCategoryNUMBER">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cheshmeb_shopModel.sp_sp_sp_GetProductBySelectCategoryNUMBER_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Txt" ColumnName="Txt" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="P_Cat_Id" ColumnName="P_Cat_Id" />
+                <ScalarProperty Name="C_Cat_Id" ColumnName="C_Cat_Id" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="NewProduct" ColumnName="NewProduct" />
+                <ScalarProperty Name="SpecialProduct" ColumnName="SpecialProduct" />
+                <ScalarProperty Name="FullSaleProduct" ColumnName="FullSaleProduct" />
+                <ScalarProperty Name="FirstTxt" ColumnName="FirstTxt" />
+                <ScalarProperty Name="OldPrice" ColumnName="OldPrice" />
+                <ScalarProperty Name="C_Id" ColumnName="C_Id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_sp_sp_spgetpicforthisparentcategory" FunctionName="cheshmeb_shopModel.Store.sp_sp_sp_spgetpicforthisparentcategory" />
+          <FunctionImportMapping FunctionImportName="sp_spEditeMotto" FunctionName="cheshmeb_shopModel.Store.sp_spEditeMotto" />
+          <FunctionImportMapping FunctionImportName="sp_spshowMotto" FunctionName="cheshmeb_shopModel.Store.sp_spshowMotto">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cheshmeb_shopModel.sp_spshowMotto_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Motto" ColumnName="Motto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_UpdateParentCategory" FunctionName="cheshmeb_shopModel.Store.Sp_UpdateParentCategory" />
+          <FunctionImportMapping FunctionImportName="Sp_UpdateProduct" FunctionName="cheshmeb_shopModel.Store.Sp_UpdateProduct" />
+          <FunctionImportMapping FunctionImportName="Sp_sp_sp_GetAllrproductBySelectOfset" FunctionName="cheshmeb_shopModel.Store.Sp_sp_sp_GetAllrproductBySelectOfset">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cheshmeb_shopModel.Sp_sp_sp_GetAllrproductBySelectOfset_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Txt" ColumnName="Txt" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="P_Cat_Id" ColumnName="P_Cat_Id" />
+                <ScalarProperty Name="C_Cat_Id" ColumnName="C_Cat_Id" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="NewProduct" ColumnName="NewProduct" />
+                <ScalarProperty Name="SpecialProduct" ColumnName="SpecialProduct" />
+                <ScalarProperty Name="FullSaleProduct" ColumnName="FullSaleProduct" />
+                <ScalarProperty Name="FirstTxt" ColumnName="FirstTxt" />
+                <ScalarProperty Name="OldPrice" ColumnName="OldPrice" />
+                <ScalarProperty Name="C_Id" ColumnName="C_Id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_sp_sp_GetAllrproductBySelectOfsetfullsale" FunctionName="cheshmeb_shopModel.Store.Sp_sp_sp_GetAllrproductBySelectOfsetfullsale">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cheshmeb_shopModel.Sp_sp_sp_GetAllrproductBySelectOfsetfullsale_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Txt" ColumnName="Txt" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="P_Cat_Id" ColumnName="P_Cat_Id" />
+                <ScalarProperty Name="C_Cat_Id" ColumnName="C_Cat_Id" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="NewProduct" ColumnName="NewProduct" />
+                <ScalarProperty Name="SpecialProduct" ColumnName="SpecialProduct" />
+                <ScalarProperty Name="FullSaleProduct" ColumnName="FullSaleProduct" />
+                <ScalarProperty Name="FirstTxt" ColumnName="FirstTxt" />
+                <ScalarProperty Name="OldPrice" ColumnName="OldPrice" />
+                <ScalarProperty Name="C_Id" ColumnName="C_Id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_sp_sp_GetAllrproductBySelectOfsetnew" FunctionName="cheshmeb_shopModel.Store.Sp_sp_sp_GetAllrproductBySelectOfsetnew">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cheshmeb_shopModel.Sp_sp_sp_GetAllrproductBySelectOfsetnew_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Txt" ColumnName="Txt" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="P_Cat_Id" ColumnName="P_Cat_Id" />
+                <ScalarProperty Name="C_Cat_Id" ColumnName="C_Cat_Id" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="NewProduct" ColumnName="NewProduct" />
+                <ScalarProperty Name="SpecialProduct" ColumnName="SpecialProduct" />
+                <ScalarProperty Name="FullSaleProduct" ColumnName="FullSaleProduct" />
+                <ScalarProperty Name="FirstTxt" ColumnName="FirstTxt" />
+                <ScalarProperty Name="OldPrice" ColumnName="OldPrice" />
+                <ScalarProperty Name="C_Id" ColumnName="C_Id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_sp_sp_GetAllrproductBySelectOfsetSpecial" FunctionName="cheshmeb_shopModel.Store.Sp_sp_sp_GetAllrproductBySelectOfsetSpecial">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cheshmeb_shopModel.Sp_sp_sp_GetAllrproductBySelectOfsetSpecial_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Txt" ColumnName="Txt" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="P_Cat_Id" ColumnName="P_Cat_Id" />
+                <ScalarProperty Name="C_Cat_Id" ColumnName="C_Cat_Id" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="NewProduct" ColumnName="NewProduct" />
+                <ScalarProperty Name="SpecialProduct" ColumnName="SpecialProduct" />
+                <ScalarProperty Name="FullSaleProduct" ColumnName="FullSaleProduct" />
+                <ScalarProperty Name="FirstTxt" ColumnName="FirstTxt" />
+                <ScalarProperty Name="OldPrice" ColumnName="OldPrice" />
+                <ScalarProperty Name="C_Id" ColumnName="C_Id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

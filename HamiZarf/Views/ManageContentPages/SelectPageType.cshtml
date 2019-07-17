@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "SelectPageType";
+    Layout = "~/Views/Shared/lay.cshtml";
+}
+<br />
+<br />
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <form action="/ManageContentPages/EditPages" method="post">
+            <div class="form-group">
+
+                <label class="pull-right">انتخاب صفحه مورد نظر</label>
+                <br />
+                <select dir="rtl" class="form-control" name="id" id="slcType">
+
+
+
+                    <option value="1">درباره سایت</option>
+                    <option value="3">راهنمای خرید</option>
+                    <option value="2">پشتیبانی فروش</option>
+                    <option value="4">ارسال سفارشات</option>
+                    <option value="5">گارانتی برگشت وجه</option>
+
+                </select>
+                <br />
+
+               
+
+            </div>
+            <button class="btn btn-block btn-info" id="btnGo">برو</button>
+        </form>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+<script>
+    $(btnGo).click(function () {
+        this.textContent = '...لطفا منتظر بمانید '
+    })
+</script>
+
+
+

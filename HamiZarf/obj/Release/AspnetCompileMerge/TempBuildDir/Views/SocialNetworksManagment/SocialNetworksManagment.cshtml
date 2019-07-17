@@ -1,0 +1,92 @@
+﻿@{
+    Layout = "~/Views/Shared/lay.cshtml";
+}
+
+<body>
+   
+    <br />
+    <div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="alert-success" id="divSuccessSocialNetworks">@TempData["msgSocialNeteworks"]</div>
+               
+                    <div class="title">
+                       <br />
+                        <h4>لطفا آدرس لینک شبکه های اجتماعی را وارد نمایید</h4>
+                        <br />
+                        <h4>https://t.me/hami_zarf : مثال   </h4>
+                        <br />
+                        <h4>https://www.facebook.com/hami_zarf : مثال   </h4>
+                        <hr />
+
+                        <br />
+                        <br />
+                        <form action="/SocialNetworksManagment/AddSocialNetwork" method="post">
+
+
+
+
+                     
+                                <div class="form-group form-inline text-center" style="align-content:center">
+                                    @foreach (var item in ViewBag.s as IEnumerable<HamiZarf.Models.SocialNetworksLink>)
+                                    {
+                                        <div class="form-group">
+
+                                            <span><small><img src="~/Icons/if_telegram_1419139.png" style="width:30px;height:30px;padding-bottom:3%" /></small></span>   <input dir="ltr" title="آیدی کانال یا اکانت تلگرام" class="form-control" value="@item.Telegram" name="telegram" placeholder="Telegram Id/Channel Id">
+                                        </div>
+                                        <div class="form-group">
+
+                                            <span><small><img src="~/Icons/google-plus.png" style="width:30px;height:30px;padding-bottom:3%" /></small></span>   <input dir="ltr" title="آیدی جیمیل یا گوگل پلاس" name="gmail" class="form-control" value="@item.Gmail" placeholder="Gmail">
+
+                                        </div>
+
+
+                                        <div class="form-group">
+
+                                            <span><small><img src="~/Icons/instagram.png" style="width:30px;height:30px;padding-bottom:3%" /></small></span>   <input dir="ltr" title="آیدی اینستاگرام" name="instagram" class="form-control" value="@item.Instagram" placeholder="Instagram Id">
+                                        </div>
+                                    }
+                                   
+
+                                 
+
+                                </div>
+                           
+                                <div class="form-group form-inline text-center" style="align-content:center">
+                                    @foreach (var item in ViewBag.s as IEnumerable<HamiZarf.Models.SocialNetworksLink>)
+                                    {
+                                        <div class="form-group">
+
+                                            <span><small><img src="~/Icons/tumblr.png" style="width:30px;height:30px;padding-bottom:3%" /></small></span>   <input dir="ltr" title="آیدی توییتر" name="twitter" class="form-control" value="@item.Twitter" placeholder="Twitter Id">
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <span><small><img src="~/Icons/linkedin.png" style="width:30px;height:30px;padding-bottom:3%" /></small></span>   <input dir="ltr" title="آیدی اینکدین" name="LinkedIn" class="form-control" value="@item.LinkedIn" placeholder="Linked In Id">
+                                        </div>
+
+
+                                        <div class="form-group">
+
+                                            <span><small><img src="~/Icons/facebook.png" style="width:30px;height:30px;padding-bottom:3%" /></small></span>   <input dir="ltr" title="آیدی فیسبوک" name="facebook" class="form-control" value="@item.Facebook" placeholder="Facebook Id">
+                                        </div>
+                                    }
+                                   
+
+                                </div>
+                            
+                            <div style="margin:auto" class="text-center">
+                                <button class="btn btn-success btn-md" id="btnSaveSocialNetworks">ذخیره اطلاعات</button>
+                            </div>
+                        </form>
+                    </div>
+              
+                <script>
+                    btnSaveSocialNetworks.onclick = function () {
+                        this.textContent='در حال ذخیره اطلاعات'
+                    }
+                </script>
+            </div>
+</body>
+

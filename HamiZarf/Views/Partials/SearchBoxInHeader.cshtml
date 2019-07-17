@@ -1,0 +1,26 @@
+﻿<div class="col-xs-12 col-sm-8 col-md-6">
+    <div class="header_cat_search">
+        <form id="searchbox" class="search_form" action="/home/SearchProductBySearchBox">
+            <input type="search"name="search" placeholder="جستجو در محتوای سایت ...">
+            <button type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+            <div class="header_cat">
+                <select name="category" id="cat_items">
+                    @*<option>دسته بندی ها</option>
+                        <option>--اسمارت فون--</option>
+                        <option>--کامپیوتر--</option>
+                        <option>--تبلت--</option>
+                        <option>--تن پوش--</option>*@
+
+                    @{ var db1 = new HamiZarf.Models.HamiZarfDB();}
+                    @foreach (var item in db1.ParentCategories.ToList())
+                    {
+                        <option style="color:#bc5809" >@item.Name</option>
+                    }
+                </select>
+            </div>
+        </form>
+    </div>
+</div>
+

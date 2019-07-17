@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/Views/Shared/lay.cshtml";
+}
+
+<body>
+    <div> 
+        @for (int i = 0; i < 4; i++)
+        {
+            <br />
+        }
+      
+        <div class="text-center" style="margin:auto">
+            <h4>مدیریت اطلاعات اسلایدر</h4>
+        </div>
+        <hr />
+        <table class="table table-bordered table-responsive table-striped"style="border-color:orangered;margin:auto;width:40%;background-color:aqua"dir="rtl">
+            <tr>
+                <th>متن روی تصویر</th>
+                <th> تصویر</th>
+                <th>ویرایش</th>
+                <th>حذف</th>
+            </tr>
+            @foreach (var item in ViewBag.showallslider as IEnumerable<HamiZarf.Models.Slider>)
+            {
+                <tr>
+                    <td>@item.caption</td>
+                    <td><img src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.img)}")" style="width:70px;height:90px" class="img-circle img-responsive img-thumbnail" /></td>
+                    <td><a href="/slider/EditSlider?id=@(item.Id)" class="btn btn-success">ویرایش</a></td>
+                    <td><a href="/slider/DeleteSlider?id=@(item.Id)" class="btn btn-danger">حذف</a></td>
+                </tr>
+            }
+         
+        </table>
+    </div>
+</body>
+

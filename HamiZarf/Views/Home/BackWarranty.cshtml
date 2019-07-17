@@ -1,0 +1,182 @@
+﻿
+@{
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<title>گارانتی بازگشت</title>
+@for (int i = 0; i < 6; i++)
+{
+
+    <br />
+}
+<header class="header_area">
+    <div class="header_top_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 hidden-xs">
+                    <div class="header_top_left">
+                        <p> تلفن تماس: <span>09178134699</span></p>
+                    </div>
+                </div>
+                <div class="col-sm-6 hidden-xs">
+                    <div class="header_top_right">
+                        <nav>
+                            <ul>
+                                <li class="language">
+                                    <a id="header_sub" href="#">انگلیسی</a>
+                                    <ul id="header_submenu">
+                                        <li class="active"><a href="#">فرانسوی</a></li>
+                                        <li><a href="#">فارسی</a></li>
+                                    </ul>
+                                </li>
+                                @*<li class="currency">
+                                        <a id="header_sub_cur" href="#">یورو</a>
+                                        <ul id="header_submenu_cur">
+                                            <li><a href="#">دلار(USD)</a></li>
+                                            <li><a href="#">یورو(EUR)</a></li>
+                                            <li><a href="#">تومان(TOM)</a></li>
+                                        </ul>
+                                    </li>*@
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header_middle_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="header_logo">
+                        <a href="/home/index"><img src="~/Template/img/logo/logo-white-text.png" alt="Timeplus" title="Relaxshop"></a>
+                    </div>
+                </div>
+                <style>
+                    .c:hover {
+                        color: magenta;
+                        background-color: wheat;
+                        font-family: Tahoma;
+                    }
+                </style>
+                @Html.Partial("~/Views/Partials/SearchBoxInHeader.cshtml")
+                @Html.Partial("~/Views/Partials/AccountInHeader.cshtml")
+                @Html.Partial("~/Views/Partials/PurchaseCartInHeader.cshtml")
+            </div>
+        </div>
+    </div>
+    <!-- MainMenu Area start -->
+
+
+    @{
+        var db = new HamiZarf.Models.HamiZarfDB();
+    }
+    <div class="mainmenu_area">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-9 hidden-xs">
+
+
+                    <div class="mainmenu">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="/home/index">خانه</a>
+
+                                </li>
+                                <li><a href="/home/ShowNewProduct">جدید ترین ها</a></li>
+                                <li><a href="/home/ShowFullSaleProduct">پر فروش ترین ها</a></li>
+                                <li><a href="/home/ShowSpecialProduct">ویژه ها</a></li>
+                                <li><a href="/home/showallcontents">وبلاگ</a></li>
+                                <li><a href="/home/about">درباره ما</a></li>
+                                <li><a href="/home/contactus">تماس با ما</a></li>
+                                <li><a href="#"></a></li>
+                                <li>
+                                    <a href="shop-grid.html">صفحات</a>
+                                    <ul class="submenu_mainmenu">
+
+
+
+                                        <li><a href="/home/HelpForBuy">راهنمای خرید</a></li>
+                                        <li><a href="/home/SaleSupport">پشتیبانی فروش</a></li>
+                                        <li><a href="/home/SendOrders">ارسال سفارشات</a></li>
+                                        <li><a href="/home/BackWarranty">گارانتی بازگشت وجه</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <!-- MainMenu Area end -->
+    <!-- Mobile Menu Area start -->
+
+    <div class="mobile-menu-area" style="padding-left:10%">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="mobile-menu">
+
+                        <nav id="dropdown">
+                            <ul>
+                                <li>
+                                    <a href="/home/index">خانه</a>
+
+                                </li>
+                                <li><a href="/home/ShowNewProduct">جدید ترین ها</a></li>
+                                <li><a href="/home/ShowFullSaleProduct">پر فروش ترین ها</a></li>
+                                <li><a href="/home/ShowSpecialProduct">ویژه ها</a></li>
+                                <li><a href="/home/showallcontents">وبلاگ</a></li>
+                                <li><a href="/home/about">درباره ما</a></li>
+                                <li><a href="/home/contactus">تماس با ما</a></li>
+                                <li><a href="#"></a></li>
+                                <li>
+                                    <a href="shop-grid.html">صفحات</a>
+                                    <ul>
+
+
+
+                                        <li><a href="/home/HelpForBuy">راهنمای خرید</a></li>
+                                        <li><a href="/home/SaleSupport">پشتیبانی فروش</a></li>
+                                        <li><a href="/home/SendOrders">ارسال سفارشات</a></li>
+                                        <li><a href="/home/BackWarranty">گارانتی بازگشت وجه</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <!-- Mobile Menu Area end -->
+</header>
+@foreach (var item in ViewBag.show as IEnumerable<HamiZarf.Models.AllPage>)
+{
+    <div class="about-area pad-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-md-8">
+                    <div class="about-text">
+                       
+                        <p>
+                            @Html.Raw(item.StrOfAllPage)
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+    </div>
+
+}

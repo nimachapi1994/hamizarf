@@ -1,0 +1,281 @@
+﻿@{
+    Layout = "~/Views/Shared/lay.cshtml";
+}
+
+
+
+@section scripts{
+
+
+    <script src="~/Plugins/ckeditor/ckeditor.js"></script>
+}
+
+
+
+
+
+
+
+
+@foreach (var iteme in ViewBag.s as IEnumerable<HamiZarf.Models.Product>)
+{
+    if (iteme != null)
+    {
+        <body id="bd">
+            @for (int i = 0; i < 5; i++)
+            {
+                <br />
+            }
+          
+            <br />
+            <div style="margin:auto;width:60%">
+                <a href="/productManagment/ShowAllProducts" class="btn btn-primary">مدیریت محصولات ثبت شده</a>
+                <br />
+                <br />
+                <form action="/productManagment/EditProductConfirm" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label class="pull-right">انتخاب دسته اصلی</label>
+                        <select dir="rtl" class="form-control" id="slcShowParentCategory" name="p_id">
+                            @if (iteme.P_Cat_Id != null)
+                            {
+                                <option value="@iteme.ParentCategory.Id">@iteme.ParentCategory.Name </option>
+                            }
+                            <option value="-1">--------------</option>
+
+                            @foreach (var item in ViewBag.showParentCategory as IEnumerable<HamiZarf.Models.ParentCategory>)
+                            {
+
+                                <option value="@item.Id">@item.Name</option>
+
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="pull-right">انتخاب زیر دسته</label>
+                        <select dir="rtl" class="form-control" id="slcShowChildCategory" name="c_id">
+
+
+                            @if (iteme.C_Cat_Id != null)
+                            {
+                                <option value="@iteme.ChildCategory.Id">@iteme.ChildCategory.Name </option>
+                            }
+                            <option value="-1">--------------</option>
+
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group form-inline">
+                            <div class="form-group pull-right">
+
+                                <input class="form-control" value="@iteme.Name" name="name" dir="rtl" placeholder="نام محصول" />
+                            </div>
+                            <div class="form-group pull-right">
+
+                                <input class="form-control" value="@($"{iteme.Price:0,0}") " name="price" dir="rtl" placeholder="قیمت" />
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group pull-right">
+                        <input class="form-control" value="@iteme.Unit" name="unit" dir="rtl" placeholder="نوع واحد" />
+
+                    </div>
+                    <div class="form-group pull-right">
+                        @if (iteme.IsAvailable == true)
+                    {
+                            <label style="color:#053c09" id="lblAvailable"></label> <input checked="checked" class="checkbox pull-right" name="IsAvailable" type="checkbox" id="chkbIsAvialable" />  <label>وضعیت موجودی</label>
+
+                        }
+                        else
+                        {
+                            <label style="color:lightgreen" id="lblAvailable"></label> <input class="checkbox pull-right" name="IsAvailable" type="checkbox" id="chkbIsAvialable" />                            <label> : وضعیت موجودی</label>
+
+                        }
+                        <br />
+                    </div>
+                    <br />
+                    <hr />
+
+                    <div class="form-group pull-right">
+                        @if (iteme.SpecialProduct == true)
+                        {
+                            <input class="checkbox pull-right" name="SpecialProduct" type="checkbox" checked="checked" />       <label> محصول ویژه</label>
+
+                        }
+                        else
+                        {
+                            <input class="checkbox pull-right" name="SpecialProduct" type="checkbox" />       <label> محصول ویژه</label>
+
+                        }
+                        @if (iteme.FullSaleProduct == true)
+                        {
+                            <br />
+                            <br />
+                            <input class="checkbox pull-right" name="FullSaleProduct" type="checkbox"checked="checked" />      <label>  محصول پر فروش</label>
+                        }
+                        else
+                        {
+                            <br />
+                            <br />
+                            <input class="checkbox pull-right" name="FullSaleProduct" type="checkbox" />      <label>  محصول پر فروش</label>
+                        }
+                        @if (iteme.NewProduct == true)
+                        {
+                            <br />
+                            <br />
+                            <input class="checkbox pull-right" name="NewProduct" type="checkbox" checked="checked"/>     <label> محصول جدید</label>
+
+                        }
+                        else
+                        {
+                            <br />
+                            <br />
+                            <input class="checkbox pull-right" name="NewProduct" type="checkbox" />     <label> محصول جدید</label>
+
+                        }
+
+
+
+
+
+
+                    </div>
+
+                    <div class="container" style="margin:auto">
+                        <div class="form-group">
+                           
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                          
+                            <label class="pull-right">انتخاب تصویر</label>
+                            <input type="file" id="txtimg" name="img" />
+                        </div>
+                    </div>
+                    <div class="container" style="margin:auto">
+                        <div class="form-group" id="divshowimg" style="margin:auto">
+                            <button class="btn btn-danger btn-xs pull-right" type="button" id="btnClose">&times;</button>
+                            @if (iteme.pic != null)
+                            {
+                                <img style="width:300px;height:300px" id="img" src="@($"data:image/jpeg;base64,{Convert.ToBase64String(iteme.pic)}")" />
+
+                            }
+                            else
+                            {
+                                <img style="width:300px;height:300px" id="img" src="~/Template/img/ProductNotHaveImage/فاقد-تصویر.jpg" />
+
+                            }
+
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="container" style="margin:auto">
+                        <label class="control-label">متن</label>
+                        <div class="form-group" style="margin:auto;padding-left:30%">
+                       
+                            <br />
+                            <input name="firsttxt" placeholder="حداکثر 3 جمله" class="form-control" value="@iteme.FirstTxt">
+
+
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="container" style="margin:auto">
+                        <div class="form-group">
+                            @if (iteme.Txt != null)
+                            {
+
+                            <textarea class="content" name="Txt" id="ck">@iteme.Txt</textarea>
+                            }
+                            else
+                            {
+                                <textarea class="content" name="Txt" id="ck"></textarea>
+                            }
+                        </div>
+                    </div>
+                    <button class="btn btn-success btn-block"id="btnsend">ویرایش و دخیره محصول</button>
+                </form>
+            </div>
+
+            <script src="~/Plugins/MegaMenuForCategory/js/vendor/jquery-1.10.2.min.js"></script>
+
+            <script>
+                $(btnsend).click(function () {
+                    btnSend.textContent = 'لطفا منتظر بمانید ...'
+                })
+        $(btnClose).click(function () {
+            $(img).attr('src', '');
+            $(divshowimg).hide();
+            txtimg.value = '';
+
+        })
+       
+        $(txtimg).change(function () {
+            var reader = new FileReader()
+            reader.readAsDataURL(txtimg.files[0])
+            reader.onloadend = function (ex) {
+
+                img.src = ex.target.result;
+                $(divshowimg).show(1000)
+            }
+
+
+
+            })
+
+            </script>
+
+            @for (int i = 0; i < 10; i++)
+            {
+                <br />
+            }
+
+
+
+
+
+
+
+
+
+            <script>
+       CKEDITOR.replace('ck', { filebrowserImageUploadUrl: '/ContentManagment/SendRequestImageAndBackImageUrl' })
+            </script>
+
+
+
+
+
+            <script>
+        $(chkbIsAvialable).change(function () {
+            if (chkbIsAvialable.checked==true) {
+                $(lblAvailable).html('موجود')
+            }
+            else {
+                $(lblAvailable).html('')
+            }
+        })
+            </script>
+            <script>
+        $(slcShowParentCategory).change(function () {
+            $(slcShowChildCategory).html('')
+            jQuery.post('/ProductManagment/ShowChildCategoryByJson', { id: this.value }, function (result) {
+                $(result).each(function (idx, p) {
+                    $(slcShowChildCategory).append('<option value="' + p.id + '">' + p.name + '</option>')
+                })
+            })
+        })
+            </script>
+        
+        </body>
+    }
+
+}
+

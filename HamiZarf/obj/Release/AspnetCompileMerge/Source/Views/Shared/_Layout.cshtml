@@ -1,0 +1,266 @@
+﻿
+<!doctype html>
+<html class="no-js" lang="fa">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>جشم بازار || فروشگاه</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="~/Template/img/favicon.ico">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- all css here -->
+    <!-- Master CSS -->
+    <link href="~/Template/img/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Template/master.css">
+    <!-- modernizr css -->
+    <script src="~/Template/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- header start -->
+   
+    <!-- header end -->
+    <!-- slider start -->
+    <!-- service start -->
+  
+    <!-- client start -->
+    <br />
+    <br />
+    @RenderBody()
+    <!-- client end -->
+    <!-- footer start -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="footer-logo">
+                            <img src="~/Template/img/logo/logo-white-text.png" alt="">
+                            @{
+                                var db = new HamiZarf.Models.HamiZarfDB();
+
+                            }
+                            @foreach (var item in db.Mottoes.Where(x => x.Id == 1).ToList())
+                            {
+                                <p>@item.Motto1</p>
+                            }
+                            <br />
+                            @foreach (var item in db.SocialNetworksLinks.ToList())
+                            {
+                                <div class="widget-icon">
+                                    <a href="@item.Facebook"><i class="fa fa-facebook"></i></a>
+                                    <a href="@item.Twitter"><i class="fa fa-twitter"></i></a>
+                                    <a href="@item.Gmail"><i class="fa fa-google-plus"></i></a>
+                                    <a href="@item.LinkedIn"><i class="fa fa-linkedin"></i></a>
+                                    <a href="@item.Instagram"><i class="fa fa-instagram"></i></a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer-top-area start -->
+        <div class="footer-top-area">
+            <div class="container">
+                <div class="row">
+                    <!-- footer-widget start -->
+                    <div class="col-lg-3 col-md-3 col-sm-4">
+                        <div class="footer-widget">
+                            <h3>تماس با ما</h3>
+                            <ul class="footer-contact">
+                                <li>
+                                    <i class="fa fa-map-marker"> </i>
+                                    آدرس: شیراز نبش خیابان عفیف طبقه سوم فوقانی بانک سپه
+                                </li>
+                                <li>
+                                    <i class="fa fa-envelope"> </i>
+                                    info@cheshmebazar.ir
+                                </li>
+                                <li>
+                                    <i class="fa fa-phone"> </i>
+                                    09178134699
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- footer-widget end -->
+                    <!-- footer-widget start -->
+                    <div class="col-lg-3 col-md-3 hidden-sm">
+                        <div class="footer-widget">
+                            <h3>حساب من</h3>
+                            <ul class="footer-menu">
+                                @using Microsoft.AspNet.Identity;
+                                @using Microsoft.AspNet.Identity.EntityFramework;
+                                @using Microsoft.AspNet.Identity.Owin;
+                                @using IdentitySample.Models
+                                @{
+                                    var usermngr = HttpContext.Current.GetOwinContext().Get<ApplicationUserManager>();
+                                    var finduser = usermngr.FindById(User.Identity.GetUserId());
+                                }
+                                <li><a href="/home/index">خانه</a></li>
+                                @if (!User.Identity.IsAuthenticated)
+                                {
+                                    <li><a href="/account/register">ورود</a></li>
+                                    <li><a href="/account/register">ثبت نام</a></li>
+                                    <li><a href="#">لیست علاقه مندی های من</a></li>
+                                }
+                                else
+                                {
+                                    <li><a class="text-primary">@finduser.UserName</a></li>
+                                    if (User.IsInRole("admin"))
+                                    {
+                                        <li class="text-warning"><a href="/AdminPanel/ControlPanel">وورد به پنل ادمین</a></li>
+
+                                    }
+                                    <li><a href="/account/logout"class="text-danger">خروج</a></li>
+
+                                    <li><a href="#">لیست علاقه مندی های من</a></li>
+                                }
+
+
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- footer-widget end -->
+                    <!-- footer-widget start -->
+                    <div class="col-lg-3 col-md-3 col-sm-4">
+                        <div class="footer-widget">
+                            <h3>صفحات</h3>
+                            <ul class="footer-menu">
+                                <li><a href="/home/HelpForBuy">راهنمای خرید</a></li>
+                                <li><a href="/home/SaleSupport">پشتیبانی فروش</a></li>
+                                <li><a href="/home/SendOrders">ارسال سفارشات</a></li>
+                                <li><a href="/home/BackWarranty">گارانتی بازگشت وجه</a></li>
+                                <li><a href="/home/about">درباره ما</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- footer-widget end -->
+                    <!-- footer-widget start -->
+                    <div class="col-lg-3 col-md-3 col-sm-4">
+                        <div class="footer-widget">
+                            <h3>صفحات</h3>
+                            <ul class="footer-menu">
+
+                                <li><a href="/home/ShowNewProduct">جدید ترین ها</a></li>
+                                <li><a href="/home/ShowFullSaleProduct">پر فروش ترین ها</a></li>
+                                <li><a href="/home/ShowSpecialProduct">ویژه ها</a></li>
+                                <li><a href="/home/showallcontents">وبلاگ</a></li>
+
+                                <li><a href="/home/contactus">تماس با ما</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- footer-widget end -->
+                </div>
+            </div>
+        </div>
+        <!-- footer-top-area end -->
+        <!-- footer-bottom-area start -->
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="copyright">
+                            <p>کپی رایت © <a href="#">نیما چاپی</a>. تمام حقوق محفوظ است</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="payment-img">
+                            <img src="~/Template/img/payment/payment.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer-bottom-area end -->
+    </footer>
+    <!-- footer bottom end -->
+    <!-- QUICKVIEW PRODUCT -->
+    <div id="quickview-wrapper">
+        <!-- Modal -->
+        <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-product">
+                            <div class="product-images">
+                                <div class="main-image images">
+                                    <img alt="" src="img/product/5.jpg">
+                                </div>
+                            </div><!-- .product-images -->
+
+                            <div class="product-info">
+                                <h1>لورم اپیسوم متن ساختگی</h1>
+                                <div class="price-box">
+                                    <p class="price"><span class="special-price"><span class="amount">132.000 تومان</span></span></p>
+                                </div>
+                                <a href="shop.html" class="see-all">مشاهده همه امکانات</a>
+                                <div class="quick-add-to-cart">
+                                    <form method="post" class="cart">
+                                        <div class="numbers-row">
+                                            <input type="number" id="french-hens" value="3">
+                                        </div>
+                                        <button class="single_add_to_cart_button" type="submit">افزودن به سبد خرید</button>
+                                    </form>
+                                </div>
+                                <div class="quick-desc">
+                                    لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد.
+                                </div>
+                                <div class="social-sharing">
+                                    <div class="widget widget_socialsharing_widget">
+                                        <h3 class="widget-title-modal">به اشتراک گذاری این محصول</h3>
+                                        <ul class="social-icons">
+                                            <li><a target="_blank" title="فیس بوک" href="#" class="facebook social-icon"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a target="_blank" title="توییتر" href="#" class="twitter social-icon"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a target="_blank" title="پینترست" href="#" class="pinterest social-icon"><i class="fa fa-pinterest"></i></a></li>
+                                            <li><a target="_blank" title="گوگل +" href="#" class="gplus social-icon"><i class="fa fa-google-plus"></i></a></li>
+                                            <li><a target="_blank" title="لینکدین" href="#" class="linkedin social-icon"><i class="fa fa-linkedin"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!-- .product-info -->
+                        </div><!-- .modal-product -->
+                    </div><!-- .modal-body -->
+                </div><!-- .modal-content -->
+            </div><!-- .modal-dialog -->
+        </div>
+        <!-- END Modal -->
+    </div>
+    <!-- END QUICKVIEW PRODUCT -->
+    <!-- all js here -->
+    <!-- jquery latest version -->
+    <script src="~/Template/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="~/Template/js/bootstrap.min.js"></script>
+    <!-- meanmenu js -->
+    <script src="~/Template/js/jquery.meanmenu.js"></script>
+    <!-- countdown js -->
+    <script src="~/Template/js/jquery.countdown.min.js"></script>
+    <!-- Nevo Slider js -->
+    <script src="~/Template/js/jquery.nivo.slider.pack.js"></script>
+    <!-- owl.carousel js -->
+    <script src="~/Template/js/owl.carousel.min.js"></script>
+    <!-- jquery-ui js -->
+    <script src="~/Template/js/jquery-ui.min.js"></script>
+    <!-- plugins js -->
+    <script src="~/Template/js/plugins.js"></script>
+    <!-- Elevatezoom JS -->
+    <script src="~/Template/js/jquery.elevateZoom-3.0.8.min.js"></script>
+    <!-- wow js -->
+    <script src="~/Template/js/wow.min.js"></script>
+    <!-- main js -->
+    <script src="~/Template/js/main.js"></script>
+</body>
+</html>

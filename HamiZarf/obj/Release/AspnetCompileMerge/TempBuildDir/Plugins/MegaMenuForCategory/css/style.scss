@@ -1,0 +1,27 @@
+@import 'bootstrap/bootstrap';
+
+html,
+body {
+	overflow-x: hidden;
+}
+
+$colors: (1: #99ccff, 2: #f3e5ab, 3: #915c83, 4: #c8a2c8, 5: #536878, 6: #abcdef);
+
+@each $anchor, $color in $colors {
+   #{"#section-"+$anchor} {
+       background-color: $color;
+       height: 230px;
+       padding-top: 40px;
+    }
+}
+
+.demo-offset-height {
+	height: 150px;
+	padding-top: 60px;
+}
+
+.panel-transparent {
+	opacity: 0;
+}
+
+

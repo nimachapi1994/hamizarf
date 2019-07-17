@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbHamiZarfModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AllPage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="StrOfAllPage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Family" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="ChildCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="P_Cat_Id" Type="Int32" />
+    <NavigationProperty Name="ParentCategory" Relationship="Self.FK_ChildCategory_ParentCategory" FromRole="ChildCategory" ToRole="ParentCategory" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_Products_ChildCategory" FromRole="ChildCategory" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="ContactU">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Txt" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="subject" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Content">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Subject" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Txt" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfShow" Type="DateTime" Precision="3" />
+    <Property Name="MoreTxt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TypeOfContent" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Motto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Motto1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ParentCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ChildCategories" Relationship="Self.FK_ChildCategory_ParentCategory" FromRole="ParentCategory" ToRole="ChildCategory" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_Products_ParentCategory" FromRole="ParentCategory" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Txt" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="P_Cat_Id" Type="Int32" />
+    <Property Name="C_Cat_Id" Type="Int32" />
+    <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsAvailable" Type="Boolean" />
+    <Property Name="pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="0" />
+    <Property Name="NewProduct" Type="Boolean" />
+    <Property Name="SpecialProduct" Type="Boolean" />
+    <Property Name="FullSaleProduct" Type="Boolean" />
+    <Property Name="FirstTxt" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ChildCategory" Relationship="Self.FK_Products_ChildCategory" FromRole="Products" ToRole="ChildCategory" />
+    <NavigationProperty Name="ParentCategory" Relationship="Self.FK_Products_ParentCategory" FromRole="Products" ToRole="ParentCategory" />
+  </EntityType>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="img" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="caption" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SocialNetworksLink">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Telegram" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Instagram" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Facebook" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Gmail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Twitter" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LinkedIn" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChildCategory_ParentCategory">
+    <End Role="ParentCategory" Type="Self.ParentCategory" Multiplicity="0..1" />
+    <End Role="ChildCategory" Type="Self.ChildCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ParentCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChildCategory">
+        <PropertyRef Name="P_Cat_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_ChildCategory">
+    <End Role="ChildCategory" Type="Self.ChildCategory" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChildCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="C_Cat_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_ParentCategory">
+    <End Role="ParentCategory" Type="Self.ParentCategory" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ParentCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="P_Cat_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="DbHamiZarf" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="AllPages" EntityType="Self.AllPage" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+    <EntitySet Name="ChildCategories" EntityType="Self.ChildCategory" />
+    <EntitySet Name="ContactUs" EntityType="Self.ContactU" />
+    <EntitySet Name="Contents" EntityType="Self.Content" />
+    <EntitySet Name="Mottoes" EntityType="Self.Motto" />
+    <EntitySet Name="ParentCategories" EntityType="Self.ParentCategory" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Sliders" EntityType="Self.Slider" />
+    <EntitySet Name="SocialNetworksLinks" EntityType="Self.SocialNetworksLink" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChildCategory_ParentCategory" Association="Self.FK_ChildCategory_ParentCategory">
+      <End Role="ParentCategory" EntitySet="ParentCategories" />
+      <End Role="ChildCategory" EntitySet="ChildCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_ChildCategory" Association="Self.FK_Products_ChildCategory">
+      <End Role="ChildCategory" EntitySet="ChildCategories" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_ParentCategory" Association="Self.FK_Products_ParentCategory">
+      <End Role="ParentCategory" EntitySet="ParentCategories" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <FunctionImport Name="Sp_DeleteChildCategory">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_DeleteContactUs">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_DeleteContent">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_DeleteParentCategory">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_DeleteProduct">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_DeleteSocialNetworkLinks">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_Get4Content" ReturnType="Collection(DbHamiZarfModel.Sp_Get4Content_Result)">
+      <Parameter Name="i" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getallchildcategoryOk" ReturnType="Collection(DbHamiZarfModel.sp_getallchildcategoryOk_Result)" />
+    <FunctionImport Name="sp_getallparentcategoryOk" ReturnType="Collection(DbHamiZarfModel.sp_getallparentcategoryOk_Result)" />
+    <FunctionImport Name="Sp_InsertChildCategory">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="p_category_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_InsertContactUs">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="txt" Mode="In" Type="String" />
+      <Parameter Name="subject" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_InsertParentCategory">
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_InsertProduct">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="price" Mode="In" Type="Decimal" />
+      <Parameter Name="txt" Mode="In" Type="String" />
+      <Parameter Name="p_Cat_Id" Mode="In" Type="Int32" />
+      <Parameter Name="C_Cat_Id" Mode="In" Type="Int32" />
+      <Parameter Name="unit" Mode="In" Type="String" />
+      <Parameter Name="isavailable" Mode="In" Type="Boolean" />
+      <Parameter Name="pic" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_SelectAllProdductOK" ReturnType="Collection(DbHamiZarfModel.Sp_SelectAllProdductOK_Result)" />
+    <FunctionImport Name="Sp_SelectProductById" ReturnType="Collection(DbHamiZarfModel.Sp_SelectProductById_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ShowAllContents" ReturnType="Collection(DbHamiZarfModel.sp_ShowAllContents_Result)" />
+    <FunctionImport Name="sp_sp_getidchildcategory" ReturnType="Collection(Int32)">
+      <Parameter Name="i" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_sp_getproductbychildvategory" ReturnType="Collection(DbHamiZarfModel.sp_sp_getproductbychildvategory_Result)">
+      <Parameter Name="i" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_sp_showchildcategorybyparentid" ReturnType="Collection(DbHamiZarfModel.sp_sp_showchildcategorybyparentid_Result)">
+      <Parameter Name="i" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_sp_showcontent" ReturnType="Collection(DbHamiZarfModel.sp_sp_showcontent_Result)" />
+    <FunctionImport Name="sp_sp_showparentcategory" ReturnType="Collection(DbHamiZarfModel.sp_sp_showparentcategory_Result)" />
+    <FunctionImport Name="sp_sp_showProdcuts" ReturnType="Collection(DbHamiZarfModel.sp_sp_showProdcuts_Result)" />
+    <FunctionImport Name="sp_sp_showslider" ReturnType="Collection(DbHamiZarfModel.sp_sp_showslider_Result)" />
+    <FunctionImport Name="sp_spEditeMotto">
+      <Parameter Name="motto" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_spshowMotto" ReturnType="Collection(DbHamiZarfModel.sp_spshowMotto_Result)" />
+    <FunctionImport Name="Sp_UpdateParentCategory">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_UpdateProduct">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="unit" Mode="In" Type="String" />
+      <Parameter Name="P_Cat_Id" Mode="In" Type="Int32" />
+      <Parameter Name="C_Cat_Id" Mode="In" Type="Int32" />
+      <Parameter Name="txt" Mode="In" Type="String" />
+      <Parameter Name="price" Mode="In" Type="Decimal" />
+      <Parameter Name="isavailable" Mode="In" Type="Boolean" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="Sp_Get4Content_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Subject" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Txt" Nullable="true" MaxLength="90" />
+    <Property Type="DateTime" Name="DateOfShow" Nullable="true" Precision="23" />
+    <Property Type="String" Name="MoreTxt" Nullable="true" />
+    <Property Type="String" Name="TypeOfContent" Nullable="true" MaxLength="20" />
+    <Property Type="Binary" Name="Pic" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="sp_getallchildcategoryOk_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="P_Cat_Id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_getallparentcategoryOk_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Sp_SelectAllProdductOK_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Txt" Nullable="true" MaxLength="3000" />
+    <Property Type="Int32" Name="Price" Nullable="true" />
+    <Property Type="Int32" Name="P_Cat_Id" Nullable="true" />
+    <Property Type="Int32" Name="C_Cat_Id" Nullable="true" />
+    <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+    <Property Type="Binary" Name="pic" Nullable="true" MaxLength="Max" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" />
+    <Property Type="Boolean" Name="NewProduct" Nullable="true" />
+    <Property Type="Boolean" Name="SpecialProduct" Nullable="true" />
+    <Property Type="Boolean" Name="FullSaleProduct" Nullable="true" />
+    <Property Type="String" Name="FirstTxt" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="Sp_SelectProductById_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Txt" Nullable="true" MaxLength="3000" />
+    <Property Type="Int32" Name="Price" Nullable="true" />
+    <Property Type="Int32" Name="P_Cat_Id" Nullable="true" />
+    <Property Type="Int32" Name="C_Cat_Id" Nullable="true" />
+    <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+    <Property Type="Binary" Name="pic" Nullable="true" MaxLength="Max" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" />
+    <Property Type="Boolean" Name="NewProduct" Nullable="true" />
+    <Property Type="Boolean" Name="SpecialProduct" Nullable="true" />
+    <Property Type="Boolean" Name="FullSaleProduct" Nullable="true" />
+    <Property Type="String" Name="FirstTxt" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="sp_ShowAllContents_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Subject" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Txt" Nullable="true" MaxLength="90" />
+    <Property Type="DateTime" Name="DateOfShow" Nullable="true" Precision="23" />
+    <Property Type="String" Name="MoreTxt" Nullable="true" />
+    <Property Type="String" Name="TypeOfContent" Nullable="true" MaxLength="20" />
+    <Property Type="Binary" Name="Pic" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="sp_sp_getproductbychildvategory_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Txt" Nullable="true" MaxLength="3000" />
+    <Property Type="Int32" Name="Price" Nullable="true" />
+    <Property Type="Int32" Name="P_Cat_Id" Nullable="true" />
+    <Property Type="Int32" Name="C_Cat_Id" Nullable="true" />
+    <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+    <Property Type="Binary" Name="pic" Nullable="true" MaxLength="Max" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" />
+    <Property Type="Boolean" Name="NewProduct" Nullable="true" />
+    <Property Type="Boolean" Name="SpecialProduct" Nullable="true" />
+    <Property Type="Boolean" Name="FullSaleProduct" Nullable="true" />
+    <Property Type="String" Name="FirstTxt" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="sp_sp_showchildcategorybyparentid_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="P_Cat_Id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_sp_showcontent_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Subject" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Txt" Nullable="true" MaxLength="90" />
+    <Property Type="DateTime" Name="DateOfShow" Nullable="true" Precision="23" />
+    <Property Type="String" Name="MoreTxt" Nullable="true" />
+    <Property Type="String" Name="TypeOfContent" Nullable="true" MaxLength="20" />
+    <Property Type="Binary" Name="Pic" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="sp_sp_showparentcategory_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_sp_showProdcuts_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Txt" Nullable="true" MaxLength="3000" />
+    <Property Type="Int32" Name="Price" Nullable="true" />
+    <Property Type="Int32" Name="P_Cat_Id" Nullable="true" />
+    <Property Type="Int32" Name="C_Cat_Id" Nullable="true" />
+    <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+    <Property Type="Binary" Name="pic" Nullable="true" MaxLength="Max" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" />
+    <Property Type="Boolean" Name="NewProduct" Nullable="true" />
+    <Property Type="Boolean" Name="SpecialProduct" Nullable="true" />
+    <Property Type="Boolean" Name="FullSaleProduct" Nullable="true" />
+    <Property Type="String" Name="FirstTxt" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="sp_sp_showslider_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Binary" Name="img" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="caption" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_spshowMotto_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Motto" Nullable="true" MaxLength="100" />
+  </ComplexType>
+</Schema>

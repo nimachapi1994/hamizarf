@@ -1,0 +1,223 @@
+﻿
+@{
+    Layout = "~/Views/Shared/lay.cshtml";
+}
+
+<head>
+   
+    <meta name="viewport" content="width=device-width" />
+    <title>مدیریت دسته بندی های وبسایت</title>
+
+</head>
+<body id="bd">
+   
+
+</body>
+<div class="container" style="margin:auto">
+    <a href="/adminpanel/controlpanel" class="btn btn-info">بازگشت به کنترل پنل</a>
+</div>
+<br />
+<div class="container" dir="rtl" style="width:80%">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+
+
+
+    <h2 style="color:darkmagenta;margin:auto">مدیریت دسته بندی های سایت</h2>
+    @if (TempData["msg"] != null)
+    {
+
+
+
+        <div class="alert-success">
+            @TempData["msg"]
+        </div>
+
+
+    }
+    <form action="/Category/GetParentCategoryAndAddToDb" method="post">
+        <div class="form-group">
+            <label for="txtinsertparentcategory" style="color:darkmagenta;margin:auto">دسته بندی اصلی را وارد نمایید</label>
+            <input class="form-control" name="name" />
+        </div>
+        <button class="btn btn-success">ذخیره</button>
+    </form>
+    <hr />
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="divshowinsert">
+        <h3 style="color:darkmagenta"> آپدیت کردن دسته بندی ها</h3>
+
+        <form action="/Category/GetChildCategoryAndAddToDb" method="post">
+            <div class="form-group">
+                <select class="form-control" name="id" id="slc1">
+                    @foreach (var item in ViewBag.d as IEnumerable<HamiZarf.Models.ParentCategory>)
+            {
+                        <option value="@item.Id">@item.Name</option>
+
+                    }
+                </select>
+
+            </div>
+            <h3>زیر دسته ها را وارد نمایید</h3>
+            <div class="form-group">
+                <button class="btn btn-success" type="button" id="btnadd1">+</button>
+                <br />
+                <div class="form-group form-inline" id="divadd1">
+
+
+                </div>
+
+            </div>
+            <button class="btn btn-success">ذخیره </button>
+        </form>
+
+        <script>
+    $(slc1).change(function () {
+        $(divadd1).html('');
+        var idd = this.value;
+        jQuery.post('/Category/ShowCategoryByJsonId', { id: idd }, function (ex,d) {
+            $(ex).each(function (idx, p) {
+                $(divadd1).append(' <input  value="' + p.name + '"readonly class="form-control" />')
+
+            })
+
+
+        })
+    })
+    btnadd1.onclick = function () {
+        $(divadd1).append(' <input class="form-control" name="name" id="txtChild"/>')
+    }
+        </script>
+        <script>
+              $(txtchild).css('resize','30')
+        </script>
+
+    </div>
+
+    <h3 style="color:darkmagenta;margin:auto;">مشاهده تمام دسته ها در یک نگاه</h3>
+
+
+
+
+
+    <table class="table table-bordered table-responsive table-hover" style="background-color:white">
+        <tr>
+            <th>شماره</th>
+            <th>دسته اصلی</th>
+            <th style="color:forestgreen"> عملیات ویرایش</th>
+            <th class="text-primary"> عملیات حذف</th>
+            <th>زیر دسته های موجود</th>
+        </tr>
+        @foreach (var item in ViewBag.d as IEnumerable<HamiZarf.Models.ParentCategory>)
+        {
+            <tr>
+                @if (ViewBag.dd != item.Id)
+                {
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+
+                    <td style="width:7%">
+                        <form action="/Category/ManagmentCategoryView">
+                            <button name="id" value="@item.Id" class="btn btn-success">ویرایش</button>
+                        </form>
+
+
+
+
+                    </td>
+                    <td style="width:7%">
+                        <form action="/Category/DeleteParentCategory">
+                            <button name="id" value="@item.Id" class="btn btn-primary">حذف</button>
+                        </form>
+                    </td>
+                    <td>
+                        <table class="table table-bordered table-responsive table-hover">
+                            <tr>
+                                <th>نام زیر دسته</th>
+                                <th>عملیات ویرایش</th>
+                                <th>حذف</th>
+                            </tr>
+
+                            @foreach (var item2 in item.ChildCategories)
+                    {
+                                <tr>
+                                    @if (ViewBag.r != item2.Id)
+                                    {
+                                        <td>@item2.Name</td>
+                                        <td style="width:7%">
+                                            <form action="/Category/ManagmentCategoryView">
+                                                <button name="idd" value="@item2.Id" class="btn btn-success">ویرایش</button>
+                                            </form>
+
+
+
+
+                                        </td>
+                                        <td style="width:7%">
+                                            <form action="/Category/DeleteChildCategory">
+                                                <button name="id" value="@item2.Id" class="btn btn-danger">حذف</button>
+                                            </form>
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <form action="/Category/UpdateChildCategory">
+                                            <td>
+                                                <div class="form-group">
+                                                    <input name="name" value="@item2.Name" class="form-control" placeholder="اسم دسته را وارد کنید" />
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input value="@item.Id" name="parent_id" hidden="hidden">
+                                                <button name="id" value="@item2.Id" class="btn btn-success">ذخیره</button>
+                                                <button name="id" value="-1" class="btn btn-primary" formaction="/Category/ManagmentCategoryView">
+                                                    بی خیال
+                                                </button>
+                                            </td>
+                                        </form>
+                                    }
+
+                                </tr>
+                            }
+                        </table>
+                    </td>
+                }
+                else
+                {
+                    <form action="/Category/UpdateParentCategory">
+                        <td>
+                            <div class="form-group">
+                                <input name="name" value="@item.Name" class="form-control" placeholder="اسم دسته را وارد کنید" />
+                            </div>
+                        </td>
+
+                        <td>
+                            <button name="id" value="@item.Id" class="btn btn-success">ذخیره</button>
+                            <button name="id" value="-1" class="btn btn-primary" formaction="/Category/ManagmentCategoryView">
+                                بی خیال
+                            </button>
+                        </td>
+                    </form>
+                }
+
+            </tr>
+        }
+
+    </table>
+</div>
+
+
+

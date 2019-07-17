@@ -1,0 +1,86 @@
+﻿
+@{
+    Layout = "~/Views/Shared/lay.cshtml";
+}
+
+<body>
+    @for (int i = 0; i < 5; i++)
+    {
+        <br />
+    }
+
+
+    <meta name="viewport" content="width=device-width" />
+    <div>
+       
+        <br />
+        <form action="/slider/EditSliderConfirm" enctype="multipart/form-data" method="post">
+          @foreach (var item in ViewBag.ShowEdit as IEnumerable<HamiZarf.Models.Slider>)
+          {
+            <div class="container" style="margin:auto;width:40%">
+                <div class="form-group">
+                    <label>متن روی عکس</label>
+                    <input class="form-control" name="caption" placeholder="متن" value="@item.caption"/>
+                </div>
+                <div class="form-group">
+                    <label>آپلود عکس</label>
+                    <input class="form-control" type="file" name="img"id="txtimg" />
+                </div>
+                <div class="container" style="margin:auto">
+                    <div class="form-group" id="divshowimg" style="margin:auto">
+                       <button class="btn btn-danger btn-xs"type="button"id="btnClose" >&times;</button>
+                        @if (item.img != null)
+                        {
+                            <img style="width:300px;height:300px" id="img" src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.img)}")" />
+
+                        }
+                        else
+                        {
+                            <img style="width:300px;height:300px" id="img" src="~/Template/img/ProductNotHaveImage/فاقد-تصویر.jpg" />
+
+                        }
+
+                    </div>
+                </div>
+
+                <button class="btn btn-success" id="btnsend">ذخیره اطلاعات</button>
+            </div>
+          }
+            <script>
+                $
+            </script>
+        </form>
+        @for (int i = 0; i < 5; i++)
+        {
+            <br />
+        }
+    </div>
+    <script src="~/Plugins/MegaMenuForCategory/js/vendor/jquery-1.10.2.min.js"></script>
+    <script>
+                $(btnsend).click(function () {
+                    btnSend.textContent = 'لطفا منتظر بمانید ...'
+                })
+        $(btnClose).click(function () {
+            $(img).attr('src', '');
+            $(divshowimg).hide();
+            txtimg.value = '';
+
+        })
+
+        $(txtimg).change(function () {
+            var reader = new FileReader()
+            reader.readAsDataURL(txtimg.files[0])
+            reader.onloadend = function (ex) {
+
+                img.src = ex.target.result;
+                $(divshowimg).show(1000)
+            }
+
+
+
+            })
+
+    </script>
+
+</body>
+

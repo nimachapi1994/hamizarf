@@ -1,0 +1,39 @@
+﻿
+
+@{
+    Layout = "~/Views/Shared/lay.cshtml";
+}
+
+
+
+<body>
+    <div style="margin:auto">
+     
+        <br />
+        <br />
+        <div class="alert-success"style="margin:auto">@TempData["msgsuccess"]</div>
+        <hr />
+        <br />
+
+        <table class="table table-bordered table-hover table-responsive table-striped"style="margin:auto;width:60%"dir="rtl">
+            <tr style="background-color:#151111">
+                <th>نام</th>
+                <th>ایمیل</th>
+                <th>موضوع</th>
+                <th>متن ارسالی</th>
+                <th>حذف</th>
+            </tr>
+            @foreach (var item in ViewBag.ShowAllContacts as IEnumerable<HamiZarf.Models.ContactU>)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Email</td>
+                    <td>@item.subject</td>
+                    <td>@item.Txt</td>
+                    <td><a href="/ContactUsManagment/DeleteContactUs?id=@(item.Id)" class="btn btn-danger">حذف</a></td>
+                </tr>
+            }
+        </table> 
+    </div>
+</body>
+

@@ -1,0 +1,20 @@
+﻿<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.cookie.js"></script>
+<script>
+    $(function () {
+        $("btnAddThisProductToPurchaseCart").click(function () {
+            this.textContent = "به سبد خرید اضافه شد";
+            var id = $(this).attr('value');
+            if ($.cookie("cart")==undefined) {
+                var date = new Date();
+                date.setTime(date.getTime() + (1 * 60 * 1000))
+                $.cookie("cart", id, { Expires: date })
+                alert(id)
+            } else {
+                var ids = $.cookie("cart");
+                $.cookie("cart", ids + ',' + id);
+            }
+        })
+    })
+   
+</script>

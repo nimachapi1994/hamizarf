@@ -1,0 +1,303 @@
+﻿
+@{
+    ViewBag.Title = "ShowContent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.Partial("~/Views/Partials/Menu.cshtml")
+@for (int i = 0; i < 8; i++)
+{
+    <br />
+}
+<header class="header_area">
+    <div class="header_top_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 hidden-xs">
+                    <div class="header_top_left">
+                        <p> تلفن تماس: <span>09178134699</span></p>
+                    </div>
+                </div>
+                <div class="col-sm-6 hidden-xs">
+                    <div class="header_top_right">
+                        <nav>
+                            <ul>
+                                <li class="language">
+                                    <a id="header_sub" href="#">انگلیسی</a>
+                                    <ul id="header_submenu">
+                                        <li class="active"><a href="#">فرانسوی</a></li>
+                                        <li><a href="#">فارسی</a></li>
+                                    </ul>
+                                </li>
+                                @*<li class="currency">
+                                        <a id="header_sub_cur" href="#">یورو</a>
+                                        <ul id="header_submenu_cur">
+                                            <li><a href="#">دلار(USD)</a></li>
+                                            <li><a href="#">یورو(EUR)</a></li>
+                                            <li><a href="#">تومان(TOM)</a></li>
+                                        </ul>
+                                    </li>*@
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header_middle_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="header_logo">
+                        <a href="/home/index"><img src="~/Template/img/logo/logo-white-text.png" alt="Timeplus" title="Relaxshop"></a>
+                    </div>
+                </div>
+                <style>
+                    .c:hover {
+                        color: magenta;
+                        background-color: wheat;
+                        font-family: Tahoma;
+                    }
+                </style>
+                @Html.Partial("~/Views/Partials/SearchBoxInHeader.cshtml")
+                @Html.Partial("~/Views/Partials/AccountInHeader.cshtml")
+                @Html.Partial("~/Views/Partials/PurchaseCartInHeader.cshtml")
+            </div>
+        </div>
+    </div>
+    <!-- MainMenu Area start -->
+
+
+    @{
+        var db = new HamiZarf.Models.HamiZarfDB();
+    }
+    <div class="mainmenu_area">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-9 hidden-xs">
+
+
+                    <div class="mainmenu">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="/home/index">خانه</a>
+
+                                </li>
+                                <li><a href="/home/ShowNewProduct">جدید ترین ها</a></li>
+                                <li><a href="/home/ShowFullSaleProduct">پر فروش ترین ها</a></li>
+                                <li><a href="/home/ShowSpecialProduct">ویژه ها</a></li>
+                                <li><a href="/home/showallcontents">وبلاگ</a></li>
+                                <li><a href="/home/about">درباره ما</a></li>
+                                <li><a href="/home/contactus">تماس با ما</a></li>
+                                <li><a href="#"></a></li>
+                                <li>
+                                    <a href="shop-grid.html">صفحات</a>
+                                    <ul class="submenu_mainmenu">
+
+
+
+                                        <li><a href="/home/HelpForBuy">راهنمای خرید</a></li>
+                                        <li><a href="/home/SaleSupport">پشتیبانی فروش</a></li>
+                                        <li><a href="/home/SendOrders">ارسال سفارشات</a></li>
+                                        <li><a href="/home/BackWarranty">گارانتی بازگشت وجه</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <!-- MainMenu Area end -->
+    <!-- Mobile Menu Area start -->
+
+    <div class="mobile-menu-area" style="padding-left:10%">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="mobile-menu">
+
+                        <nav id="dropdown">
+                            <ul>
+                                <li>
+                                    <a href="/home/index">خانه</a>
+
+                                </li>
+                                <li><a href="/home/ShowNewProduct">جدید ترین ها</a></li>
+                                <li><a href="/home/ShowFullSaleProduct">پر فروش ترین ها</a></li>
+                                <li><a href="/home/ShowSpecialProduct">ویژه ها</a></li>
+                                <li><a href="/home/showallcontents">وبلاگ</a></li>
+                                <li><a href="/home/about">درباره ما</a></li>
+                                <li><a href="/home/contactus">تماس با ما</a></li>
+                                <li><a href="#"></a></li>
+                                <li>
+                                    <a href="shop-grid.html">صفحات</a>
+                                    <ul>
+
+
+
+                                        <li><a href="/home/HelpForBuy">راهنمای خرید</a></li>
+                                        <li><a href="/home/SaleSupport">پشتیبانی فروش</a></li>
+                                        <li><a href="/home/SendOrders">ارسال سفارشات</a></li>
+                                        <li><a href="/home/BackWarranty">گارانتی بازگشت وجه</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <!-- Mobile Menu Area end -->
+</header>
+<div class="blog-area pad-60">
+    <div class="container">
+        <div class="row">
+            <!-- left-sidebar start -->
+            <div class="col-lg-3 col-md-1 col-sm-12 col-xs-12">
+                <!-- widget start -->
+              
+         
+            </div>
+            <!-- left-sidebar end -->
+         @foreach (var item in ViewBag.ShowContent as IEnumerable<HamiZarf.Models.Content>)
+         {
+            <div class="col-md-11 col-sm-12 col-xs-12">
+                <div class="blog-page-main">
+                    <div class="blog-wrapper">
+                        <div class="blog-img">
+                            <img style="width:600px;height:400px" src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.Pic)}")" alt="@item.Subject" />
+
+                        </div>
+                        <div class="blog-content">
+                            <h3>@item.Subject</h3>
+                            <div class="blog-meta">
+
+
+                                <span class="blog-cat">نوع: <a href="/home/showcontent?id=@(item.Id)">@item.TypeOfContent</a></span>
+                            </div>
+<p>
+    @Html.Raw(item.MoreTxt)
+</p>                          
+                      
+                     
+                        </div>
+                        <div class="single-post-comments">
+                            <div class="comments-area">
+                                <div class="comments-heading">
+                                    <h3>3 نظر</h3>
+                                </div>
+                                <div class="comments-list">
+                                    <ul>
+                                        <li>
+                                            <div class="comments-details">
+                                                <div class="comments-list-img">
+                                                    <img alt="" src="img/author.jpg">
+                                                </div>
+                                                <div class="comments-content-wrap">
+                                                    <span>
+                                                        <b><a href="#">فلانی</a></b>
+                                                        نویسنده نوشته
+                                                        <span class="post-time">10 ژانویه 2015 در 3:38</span>
+                                                        <a href="#">پاسخ</a>
+                                                    </span>
+                                                    <p>لورم اپیسوم متن ساختگی</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="threaded-comments">
+                                            <div class="comments-details">
+                                                <div class="comments-list-img">
+                                                    <img alt="" src="img/author.jpg">
+                                                </div>
+                                                <div class="comments-content-wrap">
+                                                    <span>
+                                                        <b><a href="#">فلانی</a></b>
+                                                        نویسنده نوشته
+                                                        <span class="post-time">10 ژانویه 2015 در 3:38</span>
+                                                        <a href="#">پاسخ</a>
+                                                    </span>
+                                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="comments-details">
+                                                <div class="comments-list-img">
+                                                    <img alt="" src="img/author.jpg">
+                                                </div>
+                                                <div class="comments-content-wrap">
+                                                    <span>
+                                                        <b><a href="#">فلانی</a></b>
+                                                        نویسنده نوشته
+                                                        <span class="post-time">10 ژانویه 2015 در 3:38</span>
+                                                        <a href="#">پاسخ</a>
+                                                    </span>
+                                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="comment-respond">
+                                <h3 class="comment-reply-title">ارسال نظر </h3>
+                                <span class="email-notes">آدرس ایمیل شما منتشر نخواهد شد. بخشهای موردنیاز علامتگذاری شدهاند *</span>
+                                <form action="#">
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4">
+                                            <p>نام *</p>
+                                            <input type="text">
+                                        </div>
+                                        <div class="col-md-4 col-sm-4">
+                                            <p>ایمیل *</p>
+                                            <input type="email">
+                                        </div>
+                                        <div class="col-md-4 col-sm-4">
+                                            <p>وب سایت</p>
+                                            <input type="text">
+                                        </div>
+                                        <div class="col-md-12 col-sm-12 comment-form-comment">
+                                            <p>نظر</p>
+                                            <textarea rows="10" cols="30" id="message"></textarea>
+                                            <input type="submit" value="ارسال نظر">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- single-latest-blog end -->
+                    </div>
+                </div>
+            </div>
+         }
+        </div>
+        <div class="row">
+            @*<div class="col-md-12">
+                <div class="blog-pagination">
+                    <div class="shop-breadcrumb">
+                        <ul>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">6</a></li>
+                            <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>*@
+        </div>
+    </div>
+</div>
+

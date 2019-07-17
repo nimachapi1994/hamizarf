@@ -1,0 +1,193 @@
+﻿
+@{
+    ViewBag.Title = "EditPages";
+    Layout = "~/Views/Shared/lay.cshtml";
+}
+@section scripts{
+
+
+    <script src="~/Plugins/ckeditor/ckeditor.js"></script>
+}
+<body id="bd">
+   
+
+  
+
+  @foreach (var item in ViewBag.show as IEnumerable<HamiZarf.Models.AllPage>)
+  {
+      if (item.Id==1)
+      {
+           <h2>مدیریت صفحه درباره ما</h2>
+      }
+      if (item.Id == 2)
+      {
+        <h2>مدیریت صفحه پشتیبانی و فروش</h2>
+      }
+
+      if (item.Id == 3)
+      {
+        <h2>مدیریت صفحه راهنمای خرید</h2>
+      }
+
+      if (item.Id == 4)
+      {
+        <h2>مدیریت صفحه ارسال سفارشات</h2>
+      }
+
+      if (item.Id == 5)
+      {
+        <h2>مدیریت صفحه گارانتی برگشت وجه</h2>
+      }
+
+      
+
+
+    <style>
+        .Validation-error {
+            color: red;
+        }
+    </style>
+    for (int i = 0; i < 1; i++)
+    {
+        <br />
+    }
+    <div>
+        <form action="/ManageContentPages/EditPagesConfirm" method="post">
+
+
+
+           
+
+            <br />
+
+            <div class="page-wrapper box-content row">
+
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    @if (item.StrOfAllPage != null)
+                    {
+                        <textarea class="content" name="StrOfAllPage" id="ck" dir="rtl">@Html.Raw(item.StrOfAllPage)</textarea>
+                    }
+                    else
+                    {
+                        <textarea class="content" name="StrOfAllPage" id="ck" dir="rtl"></textarea>
+                    }
+
+                </div>
+                <div class="col-sm-2"></div>
+                <label class="pull-right">متن  </label>
+                <br />
+
+
+            </div>
+
+
+
+
+            <br />
+
+
+            
+
+
+
+
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <button class="btn btn-success btn-block" id="btnSend">ذخیره و نمایش</button>
+
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+
+        </form>
+    </div>
+  }
+    <script>
+       CKEDITOR.replace('ck', { filebrowserImageUploadUrl: '/ContentManagment/SendRequestImageAndBackImageUrl' })
+    </script>
+    <script>
+
+                $(btnsend).click(function () {
+                    btnSend.textContent='لطفا منتظر بمانید ...'
+                })
+
+
+
+    </script>
+ 
+
+
+    @for (int i = 0; i < 10; i++)
+            {
+        <br />
+    }
+
+
+
+
+
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+
+
+
+
+
+
+    <script>
+
+        $('.content').richText({
+
+            // text formatting
+            bold: true,
+            italic: true,
+            underline: true,
+
+            // text alignment
+            leftAlign: true,
+            centerAlign: true,
+            rightAlign: true,
+
+            // lists
+            ol: true,
+            ul: true,
+
+            // title
+            heading: true,
+
+            // colors
+            fontColor: true,
+
+            // uploads
+            imageUpload: true,
+            fileUpload: true,
+
+            // link
+            urls: true,
+
+            // tables
+            table: true,
+
+            // code
+            removeStyles: true,
+            code: true,
+
+            // colors
+            colors: [],
+
+            // dropdowns
+            fileHTML: '',
+            imageHTML: ''
+
+        });
+
+    </script>
+    
+  
+
+</body>
+
+
+

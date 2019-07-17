@@ -1,0 +1,82 @@
+﻿@{
+    Layout = "~/Views/Shared/lay.cshtml";
+}
+
+<body>
+    <br />
+    <br />
+    <div style="margin:auto;width:80%"> 
+     <a href="/productmanagment/insertproduct" class="btn btn-primary">بازگشت</a>
+        <br />
+        <div class="alert-danger">@TempData["msgdanger"]</div>
+        <div class="alert-success">@TempData["msgsucess"]</div>
+        @for (int i = 0; i < 2; i++)
+        {
+            <br />
+        }
+      
+        <table class="table table-bordered table-responsive"dir="rtl">
+            <tr>
+                <th>نام محصول</th>
+                <th>قیمت</th>
+                <th>واحد</th>
+                <th>دسته اصلی</th>
+                <th>زیر دسته</th>
+                <th>عکس</th>
+                <td>تاربخ ثبت محصول</td>
+                <th>ویرایش</th>
+                <th>حذف</th>
+            </tr>
+           @foreach (var item in ViewBag.showproduct as IEnumerable<HamiZarf.Models.Sp_SelectAllProdductOK_Result>)
+           {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Unit</td>
+                
+              @foreach (var item2 in ViewBag.showParentCategory as IEnumerable<HamiZarf.Models.ParentCategory>)
+              {
+                  if (item.P_Cat_Id==item2.Id)
+                  {
+                      <td>@item2.Name</td>
+                  }
+              }
+
+
+                @foreach (var item3 in ViewBag.showChildCategory as IEnumerable<HamiZarf.Models.ChildCategory>)
+                {
+                    if (item.C_Cat_Id==item3.Id)
+                    {
+                        <td>@item3.Name</td>
+                    }
+                }
+                <td>
+                    @if (item.pic != null)
+                    {
+                        <img style="width:70px;height:90px" class="img-circle img-responsive" src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.pic)}")" />
+
+                    }
+                    else
+                    {
+                        <img style="width:70px;height:90px" class="img-circle img-responsive" src="~/Template/img/ProductNotHaveImage/فاقد-تصویر.jpg"/>
+
+                    }
+                </td>
+             
+                 
+
+                <td>@HamiZarf.CommonMethods.CalendarManager.EngToPersian(item.CreateDate.Value).ToString()</td>
+                <td><a href="/productManagment/EditProduct?id=@(item.Id)" class="btn btn-success btn-sm">ویرایش</a></td>
+                <td><a id="btnDelete" href="/productManagment/DeleteProduct?id=@(item.Id)" class="btn btn-warning btn-sm">حذف</a></td>
+
+            </tr>
+           }
+        </table>
+    </div>
+    <script>
+        btnDelete.onclick = function () {
+            this.textContent='شروع عملیات حذف'
+        }
+    </script>
+</body>
+</html>

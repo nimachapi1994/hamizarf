@@ -1,0 +1,162 @@
+﻿@{ 
+    var db = new HamiZarf.Models.HamiZarfDB();
+    var specialproduct = db.sp_sp_showProdcuts().ToList().OrderByDescending(x => x.CreateDate).Where(x => x.SpecialProduct == true).Take(5);
+    var newproduct = db.sp_sp_showProdcuts().ToList().OrderByDescending(x => x.CreateDate).Where(x => x.NewProduct == true).Take(5);
+    var fullsaleproduct = db.sp_sp_showProdcuts().ToList().OrderByDescending(x => x.CreateDate).Where(x => x.FullSaleProduct == true).Take(5);
+}
+<style>
+    .imgproduct{
+        width:220px;
+        height:250px;
+    }
+</style>
+<div class="category-area padding-30">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <br />
+                <h2>مجموعه منحصر به فرد</h2>
+                <div class="title-icon">
+                    <span><i class="fa fa-angle-right"></i> <i class="fa fa-angle-left"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="product-curosel owl-carousel owl-theme" style="opacity: 1; display: block;">
+                <!-- single-product start -->
+                <div class="owl-wrapper-outer">
+                  
+                    <div class="owl-wrapper" style="width: 4000px; left: 0px; display: block; transition: all 0ms ease; transform: translate3d(0px, 0px, 0px);">
+                        @foreach (var item in specialproduct)
+
+                        {
+
+                            <div class="owl-item" style="width: 230px;">
+
+                                <div class="col-md-12">
+                                    <div class="single-product">
+                                        <div class="product-img">
+                                            <a href="/home/showproduct?id=@item.Id">
+                                                <img src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.pic)}")" class="imgproduct">
+                                                <img class="secondary-img imgproduct" src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.pic)}")" alt="">
+                                            </a>
+                                            <span class="tag-line">ویژه</span>
+                                            <div class="product-action">
+                                                <div class="button-top">
+                                                    <a id="showmodal" href="#model" data-toggle="modal" data-target="#productModal"><i class="fa fa-search"></i></a>
+                                                    <a href="#"><i class="fa fa-heart"></i></a>
+                                                </div>
+                                                <div class="button-cart">
+                                                    <button><i class="fa fa-shopping-cart"></i> اضافه به سبد خرید</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-content">
+                                            <h3><a href="/home/showproduct?id=@item.Id" id="name">@item.Name</a></h3>
+                                            <div class="price">
+                                                <span>@item.Price تومان</span>
+                                                @if (item.OldPrice != null)
+                                                {
+                                                    <span class="old">@item.OldPrice تومان</span>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        }
+                    </div>
+           <div class="owl-wrapper" style="width: 4000px; left: 0px; display: block; transition: all 0ms ease; transform: translate3d(0px, 0px, 0px);">
+    @foreach (var item in fullsaleproduct)
+
+    {
+
+        <div class="owl-item" style="width: 230px;">
+
+            <div class="col-md-12">
+                <div class="single-product">
+                    <div class="product-img">
+                        <a href="/home/showproduct?id=@item.Id">
+                            <img src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.pic)}")" class="imgproduct">
+                            <img class="secondary-img imgproduct" src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.pic)}")" alt="">
+                        </a>
+                        <span class="tag-line">پر فروش</span>
+                        <div class="product-action">
+                            <div class="button-top">
+                                <a id="showmodal" href="#model" data-toggle="modal" data-target="#productModal"><i class="fa fa-search"></i></a>
+                                <a href="#"><i class="fa fa-heart"></i></a>
+                            </div>
+                            <div class="button-cart">
+                                <button><i class="fa fa-shopping-cart"></i> اضافه به سبد خرید</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3><a href="/home/showproduct?id=@item.Id" id="name">@item.Name</a></h3>
+                        <div class="price">
+                            <span>@item.Price تومان</span>
+                            @if (item.OldPrice != null)
+                            {
+                                <span class="old">@item.OldPrice تومان</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    }</div>
+                    <div class="owl-wrapper" style="width: 4000px; left: 0px; display: block; transition: all 0ms ease; transform: translate3d(0px, 0px, 0px);">
+                        @foreach (var item in newproduct)
+
+                        {
+
+                            <div class="owl-item" style="width: 230px;">
+
+                                <div class="col-md-12">
+                                    <div class="single-product">
+                                        <div class="product-img">
+                                            <a href="/home/showproduct?id=@item.Id">
+                                                <img src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.pic)}")" class="imgproduct">
+                                                <img class="secondary-img imgproduct" src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.pic)}")" alt="">
+                                            </a>
+                                            <span class="tag-line">جدید</span>
+                                            <div class="product-action">
+                                                <div class="button-top">
+                                                    <a id="showmodal" href="#model" data-toggle="modal" data-target="#productModal"><i class="fa fa-search"></i></a>
+                                                    <a href="#"><i class="fa fa-heart"></i></a>
+                                                </div>
+                                                <div class="button-cart">
+                                                    <button><i class="fa fa-shopping-cart"></i> اضافه به سبد خرید</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-content">
+                                            <h3><a href="/home/showproduct?id=@item.Id" id="name">@item.Name</a></h3>
+                                            <div class="price">
+                                                <span>@item.Price تومان</span>
+                                                @if (item.OldPrice != null)
+                                                {
+                                                    <span class="old">@item.OldPrice تومان</span>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        }
+                    </div>
+
+                    </div>
+                    </div>
+                </div>
+       
+            </div>
+        </div>
+    
+

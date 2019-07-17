@@ -1,0 +1,137 @@
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\roslyn\csc.exe
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\roslyn\vbc.exe
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\roslyn\VBCSCompiler.exe
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\HamiZarf.dll.config
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\HamiZarf.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\HamiZarf.pdb
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Antlr3.Runtime.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\EntityFramework.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\EntityFramework.SqlServer.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.Owin.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Newtonsoft.Json.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Owin.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\System.Web.Helpers.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\System.Web.Mvc.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\System.Web.Optimization.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\System.Web.Razor.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\System.Web.Webpages.Deployment.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\System.Web.Webpages.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\System.Web.Webpages.Razor.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\WebGrease.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Antlr3.Runtime.pdb
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\EntityFramework.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\EntityFramework.SqlServer.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.Owin.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\Newtonsoft.Json.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\System.Web.Optimization.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\System.Web.Razor.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\System.Web.Webpages.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\System.Web.Webpages.Deployment.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\System.Web.Webpages.Razor.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\System.Web.Helpers.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\bin\System.Web.Mvc.xml
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\obj\Release\HamiZarf.dll
+C:\Users\DeveloperBusinessMan\Documents\Visual Studio 2015\Projects\HamiZarf\HamiZarf\obj\Release\HamiZarf.pdb
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\roslyn\csc.exe
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\roslyn\System.Collections.Immutable.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\roslyn\System.Reflection.Metadata.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\roslyn\vbc.exe
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\roslyn\VBCSCompiler.exe
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\roslyn\VBCSCompiler.exe.config
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\HamiZarf.dll.config
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\HamiZarf.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\HamiZarf.pdb
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Antlr3.Runtime.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\EntityFramework.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\EntityFramework.SqlServer.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.AspNet.Identity.Core.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.Owin.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.Cookies.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.Facebook.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.Google.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.OAuth.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.Twitter.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.Web.Infrastructure.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Newtonsoft.Json.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Owin.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\System.Web.Helpers.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\System.Web.Mvc.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\System.Web.Optimization.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\System.Web.Razor.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\System.Web.Webpages.Deployment.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\System.Web.Webpages.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\System.Web.Webpages.Razor.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\WebGrease.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Antlr3.Runtime.pdb
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\EntityFramework.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\EntityFramework.SqlServer.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.AspNet.Identity.Core.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.Owin.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.Cookies.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.Facebook.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.Google.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.OAuth.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Microsoft.Owin.Security.Twitter.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\Newtonsoft.Json.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\System.Web.Optimization.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\System.Web.Razor.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\System.Web.Webpages.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\System.Web.Webpages.Deployment.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\System.Web.Webpages.Razor.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\System.Web.Helpers.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\bin\System.Web.Mvc.xml
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\obj\Release\HamiZarf.csprojResolveAssemblyReference.cache
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\obj\Release\HamiZarf.dll
+E:\NimaIsDeveloper\Projects\Customers Project\HamiZarf\Project\HamiZarf\HamiZarf\obj\Release\HamiZarf.pdb

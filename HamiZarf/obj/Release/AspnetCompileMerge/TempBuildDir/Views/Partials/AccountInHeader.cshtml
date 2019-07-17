@@ -1,0 +1,41 @@
+﻿<div class="hidden-xs hidden-sm col-md-2">
+    <div class="cart_header">
+        <h2 class="cart_info" id="account_sub">حساب من</h2>
+        <div class="user_info">
+            <ul id="account_submenu">
+                @using Microsoft.AspNet.Identity;
+                @using Microsoft.AspNet.Identity.EntityFramework;
+                @using Microsoft.AspNet.Identity.Owin;
+                @using IdentitySample.Models
+                @{
+                    var usermngr = HttpContext.Current.GetOwinContext().Get<ApplicationUserManager>();
+                    var finduser = usermngr.FindById(User.Identity.GetUserId());
+                }
+                <li><a href="/home/index">خانه</a></li>
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <li><a href="/account/register">ورود</a></li>
+                    <li><a href="/account/register">ثبت نام</a></li>
+                    
+                }
+                else
+                {
+                    <li><a class="text-primary">@finduser.UserName</a></li>
+                    if (User.IsInRole("admin"))
+                    {
+                        <li class="text-warning"><a href="/AdminPanel/ControlPanel">وورد به پنل ادمین</a></li>
+
+                    }
+                    if (User.IsInRole("customer"))
+                    {
+                        <li class="text-warning"><a href="/AdminPanel/ControlPanel">وورد به پنل کاربری</a></li>            
+                        <li><a href="#">لیست علاقه مندی های من</a></li>
+                    }
+                    <li><a href="/account/logout" class="text-danger">خروج</a></li>
+
+                  
+                }
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,214 @@
+﻿@{
+    Layout = "~/Views/Shared/lay.cshtml";
+}
+
+
+@section scripts{
+
+
+    <script src="~/Plugins/ckeditor/ckeditor.js"></script>
+}
+<body id="bd">
+   
+    <br />
+  @foreach (var item in ViewBag.ShowContentData as IEnumerable<HamiZarf.Models.Content>)
+  {
+    <form action="/ContentManagment/EditContentConfirm" method="post" enctype="multipart/form-data">
+        <div >
+            <br />
+
+
+
+            <a href="/ContentManagment/ShowAllContentManagment" class="btn btn-info">مشاهده تمام مقاله ها</a>
+            <br />
+            <hr />
+            <div class="alert-success">@TempData["msgsucess"]</div>
+            <hr />
+            <br />
+            <h4 dir="rtl">اضافه کردن مقاله جدید</h4>
+            <br />
+
+            <div class="container" dir="rtl">
+
+                @*//////////*@
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4 text-center">
+                        <div class="form-group">
+                            @if (item.Subject != null)
+                            {
+                                <input class="form-control" value="@item.Subject" name="subject" />
+                            }
+                            else
+                            {
+                                <input class="form-control" name="subject" />
+                            }
+
+                        </div>
+                    </div>
+                    <div class="col-sm-2 pull-left"><label class="pull-right">انتخاب موضوع مقاله</label></div>
+
+                </div>
+                @*//////////*@
+                @*//////////*@
+        
+                @*//////////*@
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4 text-center">
+                        <div class="form-group">
+
+                            <input type="file" id="txtimg" name="img" />
+                        </div>
+                    </div>
+                    <div class="col-sm-2 pull-left">
+                        <label class="pull-right">انتخاب تصویر</label></div>
+
+                </div>
+            
+
+                <div class="container" style="margin:auto">
+                    <div class="form-group" id="divshowimg" style="margin:auto">
+                        <button class="btn btn-danger btn-xs pull-right" type="button" id="btnClose">&times;</button>
+
+
+
+                        <img style="width:300px;height:300px" id="img" src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.Pic)}")"/>
+
+
+
+                    </div>
+                </div>
+
+
+
+
+                <br />
+                @*//////////*@
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4 text-center">
+                        <div class="form-group">
+                            @if (item.Txt != null)
+                            {
+                                <textarea maxlength="90" style="width:100%;height:400%" placeholder="حداکثر 90 کارکتر" dir="rtl" name="txt">@item.Txt</textarea>
+
+                            }
+                            else
+                            {
+                                <textarea maxlength="90" style="width:100%;height:400%" placeholder="حداکثر 90 کارکتر" dir="rtl" name="txt"></textarea>
+
+                            }
+                        </div>
+                    </div>
+                    <div class="col-sm-2 pull-left"><label class="pull-right">متن مقاله بصورت چند خط</label></div>
+
+                </div>
+                @*//////////*@
+             
+
+
+
+
+                @*//////////*@
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                   
+                    <div class="col-sm-9 text-center container">
+                        @if (item.MoreTxt == null)
+                        {
+
+                            <textarea class="content" name="MoreTxt" style="height:200%" id="ck" dir="rtl"></textarea>
+                        }
+                        else
+                        {
+                            <textarea class="content" name="MoreTxt" style="height:200%" id="ck" dir="rtl">@item.MoreTxt</textarea>
+
+                        }
+                    </div>
+                    <div class="col-sm-2 pull-left"><label class="pull-right">متن مقاله بصورت کامل </label></div>
+
+                </div>
+                @*//////////*@
+
+
+
+
+
+
+
+
+
+
+
+
+                    <br />
+
+
+
+
+
+
+
+
+                @*<div class="form-group">
+                    <label>تاریخ ارسال و نمایش مقاله در وبسایت</label>
+                    <input class="form-group" placeholder="مثال :1396/12/3" name="DateOfShow"value="@HamiZarf.Controllers.CalendarMngr.EngToPer(item.DateOfShow.Value)" />
+                </div>*@
+                    <br />
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+
+                        <div class="col-sm-9 text-center container">
+                            <button class="btn btn-success btn-block">ویرایش و ثبت</button>
+
+                        </div>
+                        <div class="col-sm-2 pull-left">
+
+                        </div>
+
+                        </div>
+                    </div>
+            @for (int i = 0; i < 10; i++)
+            {
+
+                <br />
+            }
+        </div>
+    </form>
+   
+  }
+
+    <script src="~/Plugins/MegaMenuForCategory/js/vendor/jquery-1.10.2.min.js"></script>
+    <script>
+       CKEDITOR.replace('ck', { filebrowserImageUploadUrl: '/ContentManagment/SendRequestImageAndBackImageUrl' })
+    </script>
+    <script>
+                $(txtimg).change(function () {
+                    var reader = new FileReader()
+                    reader.readAsDataURL(txtimg.files[0])
+                    reader.onloadend = function (ex) {
+
+                        img.src = ex.target.result;
+                        $(divshowimg).show(1000)
+                    }
+
+
+
+                })
+
+    </script>
+    <script>
+                $(btnClose).click(function () {
+                    $(img).attr('src', '');
+                    $(divshowimg).hide();
+                    txtimg.value = '';
+
+                })
+    </script>
+</body>
+
+

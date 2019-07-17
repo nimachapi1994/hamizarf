@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "showmottopage";
+    Layout = "~/Views/Shared/lay.cshtml";
+}
+
+
+<div class="container text-center" style="margin:auto">
+   <h2 class="text-center text-success">@TempData["ok"] </h2>
+        <br />
+
+    <hr />
+                <h2 class="text-center text-info">شعار وسط نوشتن حداکثر 10 کلمه</h2>
+           
+
+     
+           
+                <form action="/Motto/EditeMotto" method="post" class="text-center"style="margin:auto">
+                 
+                        <div class="form-group" style="margin:auto;padding-left:37%">
+                            @{ 
+                                var db = new HamiZarf.Models.HamiZarfDB();
+                            }
+                          
+                            @foreach (var item in db.Mottoes.Where(x=>x.Id==1).ToList())
+                            {
+                                <input class="form-control" name="m" value="@item.Motto1" />
+                            }
+                                
+                            
+                       
+                        </div>
+                    <br />
+                    <br />
+                        <button class="btn btn-success">ثبت</button>
+                   
+                </form>
+            
+        
+       
+    
+</div>
+
+
+
+

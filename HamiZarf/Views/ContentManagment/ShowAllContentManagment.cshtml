@@ -1,0 +1,61 @@
+﻿@{
+    Layout = "~/Views/Shared/lay.cshtml";
+}
+
+<body>
+    @using HamiZarf.Models
+    @model  IEnumerable<Content>
+    <br />
+    <br />
+    <div style="margin:auto;width:80%">
+        <div class="alert-success">@TempData["msgdanger"]</div>
+        <div class="alert-danger">@TempData["msgsuccess"]</div>
+        @for (int i = 0; i < 2; i++)
+        {
+            <br />
+        }
+      
+        <table class="table table-bordered table-responsive pull-right" dir="rtl">
+            <tr>
+                <th > موضوع</th>
+                <th>نوع مقاله</th>
+                <th>عکس</th>
+                <th>ویرایش</th>
+                <th>حذف</th>
+            </tr>
+          @foreach (var item in Model)
+          {
+            <tr>
+                <td>@item.Subject</td>
+             
+                <td>
+                    @if (item.Pic != null)
+                    {
+                        <img style="width:70px;height:90px" class="img-circle img-responsive" src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.Pic)}")" />
+
+                    }
+                    else
+                    {
+                        <img style="width:70px;height:90px" class="img-circle img-responsive" src="~/Template/img/ProductNotHaveImage/فاقد-تصویر.jpg" />
+
+                    }
+                </td>
+
+
+
+
+
+               
+                <td><a href="/ContentManagment/EditContent?id=@(item.Id)" class="btn btn-success btn-sm">ویرایش</a></td>
+                <td><a id="btnDelete" href="/ContentManagment/DeleteContent?id=@(item.Id)" class="btn btn-warning btn-sm">حذف</a></td>
+
+            </tr>
+          }
+        </table>
+    </div>
+    <script>
+        btnDelete.onclick = function () {
+            this.textContent='شروع عملیات حذف'
+        }
+    </script>
+</body>

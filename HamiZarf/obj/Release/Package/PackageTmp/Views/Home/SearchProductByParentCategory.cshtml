@@ -1,0 +1,309 @@
+﻿
+
+
+<title>حامی ظرف</title>
+
+
+@for (int i = 0; i < 6; i++)
+{
+    <br />
+}
+<header class="header_area">
+    <div class="header_top_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 hidden-xs">
+                    <div class="header_top_left">
+                        <p> تلفن تماس: <span>09178134699</span></p>
+                    </div>
+                </div>
+                <div class="col-sm-6 hidden-xs">
+                    <div class="header_top_right">
+                        <nav>
+                            <ul>
+                                <li class="language">
+                                    <a id="header_sub" href="#">انگلیسی</a>
+                                    <ul id="header_submenu">
+                                        <li class="active"><a href="#">فرانسوی</a></li>
+                                        <li><a href="#">فارسی</a></li>
+                                    </ul>
+                                </li>
+                                @*<li class="currency">
+                                        <a id="header_sub_cur" href="#">یورو</a>
+                                        <ul id="header_submenu_cur">
+                                            <li><a href="#">دلار(USD)</a></li>
+                                            <li><a href="#">یورو(EUR)</a></li>
+                                            <li><a href="#">تومان(TOM)</a></li>
+                                        </ul>
+                                    </li>*@
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header_middle_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="header_logo">
+                        <a href="/home/index"><img src="~/Template/img/logo/logo-white-text.png" alt="Timeplus" title="Relaxshop"></a>
+                    </div>
+                </div>
+                <style>
+                    .c:hover {
+                        color: magenta;
+                        background-color: wheat;
+                        font-family: Tahoma;
+                    }
+                </style>
+                @Html.Partial("~/Views/Partials/SearchBoxInHeader.cshtml")
+                @Html.Partial("~/Views/Partials/AccountInHeader.cshtml")
+                @Html.Partial("~/Views/Partials/PurchaseCartInHeader.cshtml")
+            </div>
+        </div>
+    </div>
+    <!-- MainMenu Area start -->
+
+
+    @{
+        var db = new HamiZarf.Models.HamiZarfDB();
+    }
+    <div class="mainmenu_area">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-9 hidden-xs">
+
+
+                    <div class="mainmenu">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="/home/index">خانه</a>
+
+                                </li>
+                                <li><a href="/home/ShowNewProduct">جدید ترین ها</a></li>
+                                <li><a href="/home/ShowFullSaleProduct">پر فروش ترین ها</a></li>
+                                <li><a href="/home/ShowSpecialProduct">ویژه ها</a></li>
+                                <li><a href="/home/showallcontents">وبلاگ</a></li>
+                                <li><a href="/home/about">درباره ما</a></li>
+                                <li><a href="/home/contactus">تماس با ما</a></li>
+                                <li><a href="#"></a></li>
+                                <li>
+                                    <a href="shop-grid.html">صفحات</a>
+                                    <ul class="submenu_mainmenu">
+
+
+
+                                        <li><a href="/home/HelpForBuy">راهنمای خرید</a></li>
+                                        <li><a href="/home/SaleSupport">پشتیبانی فروش</a></li>
+                                        <li><a href="/home/SendOrders">ارسال سفارشات</a></li>
+                                        <li><a href="/home/BackWarranty">گارانتی بازگشت وجه</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <!-- MainMenu Area end -->
+    <!-- Mobile Menu Area start -->
+
+    <div class="mobile-menu-area" style="padding-left:10%">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="mobile-menu">
+
+                        <nav id="dropdown">
+                            <ul>
+                                <li>
+                                    <a href="/home/index">خانه</a>
+
+                                </li>
+                                <li><a href="/home/ShowNewProduct">جدید ترین ها</a></li>
+                                <li><a href="/home/ShowFullSaleProduct">پر فروش ترین ها</a></li>
+                                <li><a href="/home/ShowSpecialProduct">ویژه ها</a></li>
+                                <li><a href="/home/showallcontents">وبلاگ</a></li>
+                                <li><a href="/home/about">درباره ما</a></li>
+                                <li><a href="/home/contactus">تماس با ما</a></li>
+                                <li><a href="#"></a></li>
+                                <li>
+                                    <a href="shop-grid.html">صفحات</a>
+                                    <ul>
+
+
+
+                                        <li><a href="/home/HelpForBuy">راهنمای خرید</a></li>
+                                        <li><a href="/home/SaleSupport">پشتیبانی فروش</a></li>
+                                        <li><a href="/home/SendOrders">ارسال سفارشات</a></li>
+                                        <li><a href="/home/BackWarranty">گارانتی بازگشت وجه</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <!-- Mobile Menu Area end -->
+</header>
+
+<div class="shop-area">
+    <div class="container">
+        <div class="row">
+            <!-- left-sidebar start -->
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <!-- widget-categories start -->
+                <aside class="widget widget-categories">
+                    <h3 class="sidebar-title">دسته بندی</h3>
+                    <ul class="sidebar-menu">
+                        @{
+                            var sa = new HamiZarf.Models.HamiZarfDB();
+                            var ws = sa.ParentCategories.ToList();
+                        }
+                        @foreach (var itema in ws)
+                        {
+                            <li><a href="/home/SearchProductByParentCategory?id=@(itema.Id)">@itema.Name</a> <span class="count">@itema.Products.Where(x => x.P_Cat_Id == itema.Id).Count()</span></li>
+                        }
+
+                    </ul>
+                </aside>
+                <!-- widget-categories end -->
+                <!-- shop-filter start -->
+
+                <!-- shop-filter end -->
+                <!-- filter-by start -->
+            
+                <!-- filter-by end -->
+                <!-- widget start -->
+               
+                <!-- widget end -->
+                <!-- widget start -->
+
+                <aside class="widget widget-categories">
+                    <h3 class="sidebar-title">محصولات اخیر</h3>
+                    <div class="recent-product">
+                        @foreach (var item in ViewBag.ShowProductSide as IEnumerable<HamiZarf.Models.Product>)
+                        {
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.pic)}")" alt="@item.Name" title="@item.Name">
+
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3><a href="/home/showproduct?id=@(item.Id)">@item.Name</a></h3>
+                                    <div class="price">
+                                        <span>@item.Price تومان</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </aside>
+                <!-- widget end -->
+                <!-- widget-tags start -->
+               
+                <!-- widget-tags end -->
+         
+            </div>
+            <!-- left-sidebar end -->
+            <div class="col-md-9 col-sm-12 col-xs-12">
+                <div class="shop-content">
+                    <!-- Nav tabs -->
+                 
+
+                    <div class="clear"></div>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                            <div class="row">
+                                <style>
+                                    .k {
+                                        width: 265px;
+                                        height: 260px;
+                                    }
+
+                                    .kk {
+                                        width: 250px;
+                                        height: 180px;
+                                    }
+                                </style>
+                                <!-- single-product start -->
+                                @foreach (var item in ViewBag.ShowAllProductsByCategory as IEnumerable<HamiZarf.Models.Product>)
+                                {
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="single-product">
+                                            <div class="product-img">
+                                                <a href="/home/showproduct?id=@(item.Id)">
+                                                    <img src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.pic)}")" alt="@item.Name" title="@item.Name" class="k">
+
+                                                </a>
+                                              
+                                                <div class="product-action">
+                                                    <div class="button-top">
+
+                                                        <a href="#"><i class="fa fa-heart"></i></a>
+                                                    </div>
+                                                    <div class="button-cart">
+                                                        <button><i class="fa fa-shopping-cart"></i> افزودن به سبد</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h3><a href="/home/showproduct?id=@(item.Id)">@item.Name</a></h3>
+                                                <div class="price">
+                                                    <span>@item.Price تومان</span>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                <!-- single-product end -->
+
+                            </div>
+                        </div>
+                             </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
